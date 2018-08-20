@@ -7,6 +7,9 @@ const routes = [
   {
     path: '',
     component: asyncComponent(() => import('../Widgets/index.js')),
+  },  {
+    path: 'clubs',
+    component: asyncComponent(() => import('../Clubs')),
   },
   {
     path: 'inbox',
