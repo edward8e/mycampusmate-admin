@@ -6,10 +6,13 @@ import customRoutes from '../../customApp/router';
 const routes = [
   {
     path: '',
-    component: asyncComponent(() => import('../Widgets/index.js')),
+    component: asyncComponent(() => import('../Dashboard')),
   },  {
     path: 'clubs',
     component: asyncComponent(() => import('../Clubs')),
+  },{
+    path: 'contantus',
+    component: asyncComponent(() => import('../ContactUs')),
   },
   {
     path: 'inbox',

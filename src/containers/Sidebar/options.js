@@ -6,16 +6,16 @@ const options = [
     leftIcon: 'fas fa-users',
     children: [
       {
-        key: 'shpe',
+        key: 'clubs',
         label: 'SHPE',
       },
       {
-        key: 'ieee',
+        key: 'clubs',
         label: 'IEEE',
       },
     ],
   },{
-    key: 'contant',
+    key: 'contantus',
     label: 'Contant us',
     leftIcon: 'fas fa-info-circle',
   },
