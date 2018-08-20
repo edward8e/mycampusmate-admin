@@ -16,7 +16,7 @@ const options = [
     ],
   },{
     key: 'contant',
-    label: 'Contant',
+    label: 'Contant us',
     leftIcon: 'fas fa-info-circle',
   },
 
