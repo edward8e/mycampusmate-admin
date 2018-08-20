@@ -12,10 +12,12 @@ import AutoComplete from '../../components/uielements/autocomplete';
 import PageHeader from '../../components/utility/pageHeader';
 import Box from '../../components/utility/box';
 import LayoutWrapper from '../../components/utility/layoutWrapper.js';
+import Button, { ButtonGroup } from '../../components/uielements/button';
 import ContentHolder from '../../components/utility/contentHolder';
 import IntlMessages from '../../components/utility/intlMessages';
 import LayoutContentWrapper from '../../components/utility/layoutWrapper';
 import LayoutContent from '../../components/utility/layoutContent';
+import { rtl } from '../../settings/withDirection';
 
 export default class ContactUs extends Component {
   render() {
@@ -26,6 +28,9 @@ export default class ContactUs extends Component {
       };
       const colStyle = {
         marginBottom: '16px'
+      };
+      const margin = {
+        margin: rtl === 'rtl' ? '0 0 8px 8px' : '0 8px 8px 0'
       };
       const gutter = 16;
     return (
@@ -58,6 +63,9 @@ export default class ContactUs extends Component {
             </Box>
           </Col>
         </Row>
+        <Button type="primary" style={margin}>
+                  Send
+                </Button>
           
         </LayoutContent>
       </LayoutContentWrapper>
