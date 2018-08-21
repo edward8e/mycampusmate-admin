@@ -26,6 +26,9 @@ import {
   Dropdown
 } from "reactstrap";
 
+import { TextMask, InputAdapter } from 'react-text-mask-hoc';
+
+
 class ContactUs extends Component {
   constructor(props) {
     super(props);
@@ -94,15 +97,25 @@ class ContactUs extends Component {
                   </FormGroup>
 
                   <FormGroup>
-                    <Label htmlFor="contact-phone">Phone Number</Label>
-                    <Input type="tel" id="contact-phone" name="contact-phone" />
-                    <FormText className="help-block">
-                      Please enter your Phone Number
-                    </FormText>
-                  </FormGroup>
+                  <Label>Phone Number</Label>
+                  <InputGroup>
+                    <div className="input-group-prepend">
+                      <span className="input-group-text"><i className="fa fa-phone"></i></span>
+                    </div>
+                    <TextMask
+                      mask={['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+                      Component={InputAdapter}
+                      className="form-control"
+                      name="contact-phone"
+                    />
+                  </InputGroup>
+                  <FormText color="muted">
+                    ex. (999) 999-9999
+                  </FormText>
+                </FormGroup>
 
                   <FormGroup>
-                    <Label htmlFor="contact-phone">School</Label>
+                    <Label htmlFor="contact-school">School</Label>
                     <Input
                       type="text"
                       id="contact-school"
