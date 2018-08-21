@@ -1,13 +1,9 @@
 export default {
   items: [
     {
-      name: "Dashboard",
+      name: "Home",
       url: "/dashboard",
-      icon: "icon-speedometer",
-      badge: {
-        variant: "info",
-        text: "NEW"
-      }
+      icon: "icon-home",
     },
     {
       name: 'Clubs',
@@ -25,14 +21,16 @@ export default {
           icon: 'icon-puzzle'
         }
       ]
-    },{
-      name: "Contact Us",
-      url: "/contactus",
-      icon: "icon-speedometer",
-      badge: {
-        variant: "info",
-        text: "NEW"
-      }
     },
+    {
+      divider: true,
+    },
+    {
+      name: 'Contact Us',
+      url: '/contactus',
+      icon: 'icon-speedometer',
+      class: 'mt-auto',
+      variant: 'success',
+    }
   ]
 };
