@@ -1,16 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import DashApp from './dashApp';
-import registerServiceWorker from './registerServiceWorker';
-import 'antd/dist/antd.css';
+import {HashRouter, Route, Switch} from 'react-router-dom';
 
-ReactDOM.render(<DashApp />, document.getElementById('root'));
+// Styles
+// Import Flag Icons Set
+import 'flag-icon-css/css/flag-icon.min.css';
+// Import Font Awesome Icons Set
+import 'font-awesome/css/font-awesome.min.css';
+// Import Simple Line Icons Set
+import 'simple-line-icons/css/simple-line-icons.css';
+// Import Main styles for this application
+import '../scss/style.scss'
+// Temp fix for reactstrap
+import '../scss/core/_dropdown-menu-right.scss'
 
-// Hot Module Replacement API
-if (module.hot) {
-  module.hot.accept('./dashApp.js', () => {
-    const NextApp = require('./dashApp').default;
-    ReactDOM.render(<NextApp />, document.getElementById('root'));
-  });
-}
-registerServiceWorker();
+// Containers
+import Full from './containers/Full/'
+
+ReactDOM.render((
+  <HashRouter>
+    <Switch>
+      <Route path="/" name="Home" component={Full}/>
+    </Switch>
+  </HashRouter>
+), document.getElementById('root'));
