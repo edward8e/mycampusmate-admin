@@ -9,6 +9,7 @@ import Footer from '../../components/Footer/';
 
 import Dashboard from '../../views/Dashboard/';
 import Clubs from '../../views/Clubs/';
+import ContactUs from '../../views/ContactUs/';
 
 class Full extends Component {
   render() {
@@ -23,6 +24,7 @@ class Full extends Component {
               <Switch>
                 <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
                 <Route path="/clubs" name="Clubs" component={Clubs}/>
+                <Route path="/contactus" name="ContactUs" component={ContactUs}/>
                 <Redirect from="/" to="/dashboard"/>
               </Switch>
             </Container>

@@ -5,7 +5,7 @@ class Clubs extends Component {
   render() {
     return (
       <div className="animated fadeIn">
-        Jorge is the product manager
+        Richard is alright
       </div>
     )
   }

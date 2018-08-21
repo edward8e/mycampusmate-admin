@@ -16,18 +16,18 @@ export default {
       children: [
         {
           name: 'SHPE',
-          url: '/base/breadcrumbs',
+          url: '/clubs',
           icon: 'icon-puzzle'
         },
         {
           name: 'IEEE',
-          url: '/base/cards',
+          url: '/clubs',
           icon: 'icon-puzzle'
         }
       ]
     },{
       name: "Contact Us",
-      url: "/contact",
+      url: "/contactus",
       icon: "icon-speedometer",
       badge: {
         variant: "info",
