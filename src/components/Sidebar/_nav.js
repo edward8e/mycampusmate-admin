@@ -2,7 +2,7 @@ export default {
   items: [
     {
       name: "Home",
-      url: "/dashboard",
+      url: "/home",
       icon: "icon-home",
     },
     {
@@ -11,15 +11,15 @@ export default {
       icon: 'icon-puzzle',
       children: [
         {
-          name: 'SHPE',
-          url: '/clubs',
+          name: 'Add a club event',
+          url: '/addclubs',
           icon: 'icon-puzzle'
         },
         {
-          name: 'IEEE',
-          url: '/clubs',
+          name: 'Delete a club event',
+          url: '/deleteclubs',
           icon: 'icon-puzzle'
-        }
+        },
       ]
     },
     {

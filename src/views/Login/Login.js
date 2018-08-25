@@ -1,8 +1,53 @@
 import React, {Component} from 'react';
 import {Container, Row, Col, CardGroup, Card, CardBody, Button, Input, InputGroup, InputGroupAddon} from 'reactstrap';
-
+import {Link, Switch, Route, Redirect} from 'react-router-dom';
+import { withRouter } from 'react-router-dom'
+import { connect } from "react-redux";
+import {checkAuth,authReset} from '../../redux/actions/authActions';
 
 class Login extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      email: '',
+      password: '',
+    };
+  }
+  componentWillReceiveProps(nextProps){
+    if(nextProps.isAuthenticated != this.props.isAuthenticated){
+      if(nextProps.isAuthenticated == 'Wrong password')
+      {
+        alert(nextProps.isAuthenticated)
+        this.props.authReset('Fetching')
+      }
+      if(nextProps.isAuthenticated == 'Confirm email')
+      {
+        alert(nextProps.isAuthenticated)
+        this.props.authReset('Fetching')
+      }
+      if(nextProps.isAuthenticated == 'Success')
+      {
+        alert(nextProps.isAuthenticated)
+        this.props.authReset('Fetching')
+        this.props.history.push('/dashboard');
+      }
+    }
+  }
+  register(){
+    this.props.history.push('/register');
+  }
+  login(){
+    this.props.checkAuth(this.state.email,this.state.password);
+    alert(this.props.isAuthenticated);
+    //alert(this.state.email)
+    //alert(this.state.password)
+  }
+  forgotpassword(){
+    this.props.history.push('/forgotpassword');
+  }
+  updateInput(event){
+    this.setState({ [event.target.name]: event.target.value });
+  }
   render() {
     return (
       <div className="app flex-row align-items-center">
@@ -20,7 +65,7 @@ class Login extends Component {
                           <i className="icon-user"></i>
                         </span>
                       </div>
-                      <Input type="text" placeholder="Username"/>
+                      <Input value = {this.state.email} name="email" type="text" placeholder="Email" onChange = {this.updateInput.bind(this)}/>
                     </InputGroup>
                     <InputGroup className="mb-4">
                       <div className="input-group-prepend">
@@ -28,14 +73,14 @@ class Login extends Component {
                           <i className="icon-lock"></i>
                         </span>
                       </div>
-                      <Input type="password" placeholder="Password"/>
+                      <Input value = {this.state.password} name="password" type="password" onChange = {this.updateInput.bind(this)} placeholder="Password"/>
                     </InputGroup>
                     <Row>
                       <Col xs="6">
-                        <Button color="primary" className="px-4">Login</Button>
+                        <Button onClick={this.login.bind(this)} color="primary" className="px-4">Login</Button>
                       </Col>
                       <Col xs="6" className="text-right">
-                        <Button color="link" className="px-0">Forgot password?</Button>
+                        <Button onClick={this.forgotpassword.bind(this)} color="link" className="px-0">Forgot password?</Button>
                       </Col>
                     </Row>
                   </CardBody>
@@ -46,7 +91,7 @@ class Login extends Component {
                       <h2>Sign up</h2>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua.</p>
-                      <Button color="primary" className="mt-3" active>Register Now!</Button>
+                      <Button onClick={this.register.bind(this)} color="primary" className="mt-3" active>Register Now!</Button>
                     </div>
                   </CardBody>
                 </Card>
@@ -59,4 +104,12 @@ class Login extends Component {
   }
 }
 
-export default Login;
+const mapStateToProps = ({ auth }) => {
+  return {
+    isAuthenticated : auth.isAuthenticated,
+    fetching: auth.fetching,
+  };
+};
+
+export default withRouter(connect(mapStateToProps,{authReset,checkAuth})(Login));
+
