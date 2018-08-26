@@ -3,7 +3,7 @@ export default {
     {
       name: "Home",
       url: "/home",
-      icon: "icon-home",
+      icon: "fa fa-home",
     },
     {
       name: 'Clubs',
@@ -13,12 +13,12 @@ export default {
         {
           name: 'Add a club event',
           url: '/addclubs',
-          icon: 'icon-puzzle'
+          icon: 'fa fa-plus-circle'
         },
         {
           name: 'Delete a club event',
           url: '/deleteclubs',
-          icon: 'icon-puzzle'
+          icon: 'fa fa-minus-circle'
         },
       ]
     },
@@ -28,7 +28,7 @@ export default {
     {
       name: 'Contact Us',
       url: '/contactus',
-      icon: 'icon-speedometer',
+      icon: 'fa fa-envelope',
       class: 'mt-auto',
       variant: 'success',
     }
