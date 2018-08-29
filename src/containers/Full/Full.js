@@ -52,7 +52,7 @@ class Full extends Component {
                 <Route path="/login" name="Login" component={Login}/>
                 <Route path="/forgotpassword" name="ForgotPassword" component={ForgotPassword}/>
                 <Route path="/contactus" name="ContactUs" component={ContactUs}/>
-                <Redirect from="/" to="/login"/>
+                {/* <Redirect from="/" to="/login"/> */}
               </Switch>
             </Container>
           </main>
