@@ -39,14 +39,22 @@ module.exports = (env = {}) => {
           use: {
             loader: 'babel-loader',
             options: {
+              plugins: [
+                'transform-class-properties',
+                'transform-object-rest-spread'
+              ],
               cacheDirectory: true,
-              presets: ['react', 'env']
+              presets: ['es2015','react', 'env']
             }
           }
         },
         {
           test: /\.html$/,
           loader: 'html-loader'
+        },
+        {
+          test: /\.less$/,
+          loader: 'less-loader'
         },
         {
           test: /\.(scss)$/,

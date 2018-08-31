@@ -10,10 +10,16 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter
 } from "reactstrap";
 
-class NavbarComponent extends Component {
+import { Link } from "react-router-dom";
+
+export default class NavBar extends Component {
   constructor(props) {
     super(props);
 
@@ -30,27 +36,27 @@ class NavbarComponent extends Component {
   render() {
     return (
       <div>
-        <Navbar color="light" light expand="md">
+        <Navbar color="dark" dark expand="md">
           <NavbarBrand href="/">MyCampusMate</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="#">Solutions</NavLink>
+              {/* <NavItem>
+                <NavLink active tag={Link} to="/">
+                  Home
+                </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#">Company</NavLink>
+                <NavLink tag={Link} to="/about">
+                  About Us
+                </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#">Blog</NavLink>
-              </NavItem>
+                <NavLink href="">Contact Us</NavLink>
+              </NavItem> */}
               <NavItem>
-                <NavLink href="#">Press</NavLink>
+                <NavLink active tag={Link} to="/about">Login</NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink href="#">Contact</NavLink>
-              </NavItem>
-              
             </Nav>
           </Collapse>
         </Navbar>
@@ -58,5 +64,3 @@ class NavbarComponent extends Component {
     );
   }
 }
-
-export default NavbarComponent;

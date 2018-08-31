@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { UncontrolledCarousel } from "reactstrap";
 
+
 const items = [
   {
     src:
@@ -25,7 +26,7 @@ const items = [
   }
 ];
 
-class CarouselComponent extends Component {
+class Carousel extends Component {
   render() {
     return (
     <UncontrolledCarousel items={items} />
@@ -33,4 +34,4 @@ class CarouselComponent extends Component {
   }
 }
 
-export default CarouselComponent;
+export default Carousel;
