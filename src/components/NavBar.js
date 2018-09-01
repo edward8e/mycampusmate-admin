@@ -18,6 +18,7 @@ import {
 } from "reactstrap";
 
 import { Link } from "react-router-dom";
+import './NavBar.css';
 
 export default class NavBar extends Component {
   constructor(props) {

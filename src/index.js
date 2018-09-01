@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import {HashRouter, Route, Switch} from 'react-router-dom';
 
 // Styles
+import '../src/components/NavBar.css';
+import '../src/components/HomePage.scss';
+
 // Import Flag Icons Set
 import 'flag-icon-css/css/flag-icon.min.css';
 // Import Font Awesome Icons Set

@@ -20,6 +20,8 @@ import edward from "../assets/profile/edward.jpg";
 import jorge from "../assets/profile/jorge.jpg";
 import dylan from "../assets/profile/dylan.jpeg";
 
+import './HomePage.scss';
+
 class HomePage extends Component {
   render() {
     return (
