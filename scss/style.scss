@@ -3442,7 +3442,7 @@ input[type="button"].btn-block {
   background-size: cover;
   background-repeat: no-repeat;
   padding: 2rem 1rem;
-  margin-bottom: 2rem;
+  // margin-bottom: 2rem;
   background-color: #e4e7ea;
   border-radius: 0.3rem; }
 
@@ -9887,6 +9887,149 @@ html body .app.flex-row.align-items-center {
   height:521px;
 }
 
+.feature-picture {
+  width: 340px;
+  height:491px;
+}
+
 .team-bg {
   background: #f86c6b;
 }
+
+///////////////NEW CSS
+
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.page-header {
+  font-size: 30px;
+  font-weight: 700;
+  border: none;
+  margin-top: 0;
+  margin-bottom: 30px;
+  h2 {
+    margin-bottom: 8px;
+  }
+  &.wsub {
+    margin-bottom: 0;
+    h2 {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* Features */
+
+#more-features {
+  background-image: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0;
+  &.centered-features .container {
+    // padding: 0 30px;
+    background: #FFFFFF;
+
+  }
+}
+
+#features {
+  background-image: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0;
+  .container {
+    padding: 0 30px;
+  }
+}
+  
+#features {
+  background-image: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0;
+  .container {
+    padding: 0 30px;
+  }
+}
+
+#more-features {
+  background-image: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0;
+  background: #FFFFFF;
+  &.centered-features .container {
+    padding: 0 30px;
+    background: #FFFFFF;
+  }
+}
+
+.block {
+  i {
+    color: #F1AB00;
+    font-size: 22px;
+  }
+  img {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  .social {
+    i {
+      font-size: 16px;
+    }
+    &.center a {
+      margin: 0 5px;
+    }
+  }
+}
+
+.center-feature-image {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.feature-icon i {
+  border: 2px solid #2D6CC0;
+  border-radius: 50%;
+  padding: 20px;
+}
+
+.feature-left {
+  .feature-icon {
+    position: absolute;
+    float: left;
+    left: 0;
+    i {
+      border-radius: 50%;
+      padding: 15px;
+    }
+  }
+  .feature {
+    text-align: left;
+    padding: 50px 0 0 60px;
+  }
+}
+
+.feature-right {
+  .feature-icon {
+    position: absolute;
+    float: right;
+    right: 0;
+    i {
+      border-radius: 50%;
+      padding: 15px;
+    }
+  }
+  .feature {
+    text-align: right;
+    padding: 50px 60px 0 0;
+  }
+}
+
+/* End Features */

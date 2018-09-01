@@ -39,7 +39,7 @@ class HomePage extends Component {
 
               <Col xs={12} sm={6}>
                 <h3 className="display-2 pr-1 mt-5 mb-5">RMate</h3>
-                <p className="display-4 text-left">
+                <p className="display-3 text-left pr-5 mr-5 pb-2">
                   RMate is your One-Stop-Shop for student success
                 </p>
 
@@ -58,78 +58,108 @@ class HomePage extends Component {
                       className="app-store mx-auto"
                     />
                   </a>
-                  <Button className="app-store" color="primary">
+                  {/* <Button className="app-store" color="primary">
                     Get Started
-                  </Button>
+                  </Button> */}
                 </p>
               </Col>
             </Row>
           </Jumbotron>
         </div>
 
-        <div className="pb-2 mt-4 mb-2 border-bottom text-center">
-          <h2>Features</h2>
-        </div>
+        <section id="more-features" className="centered-features fluid">
+          <div className="container">
+            <div className="page-header text-center">
+              <h2>App Features</h2>
+            </div>
+            <div className="row">
+              <div className="col-md-4 feature-left">
+                <div className="feature block">
+                  <div className="feature-icon">
+                    <i className="fa fa-compass rounded" />
+                  </div>
+                  <h5>Classroom Navigation</h5>
+                  <p>
+                    Get directions from anywhere right to your classroom door!
+                    No more getting lost getting around UCR!
+                  </p>
+                </div>
 
-        <div>
-          <Container className="text-center">
-            <Row>
-              <Col xs={12} sm={4}>
-                <h3>Classroom Navigation</h3>
-                <p>
-                  Get directions from anywhere right to your classroom door! No
-                  more getting lost getting around UCR!
-                </p>
-              </Col>
-              <Col xs={12} sm={4}>
-                <h3>Class Schedule Management</h3>
-                <p>
-                  Keep track of your classes all in one easy to access place!
-                  Once your classes schedule is in the app, it makes navigating
-                  to them easier!
-                </p>
-              </Col>
-              <Col xs={12} sm={4}>
-                <h3>UCR Points-of-Interest</h3>
-                <p>
-                  Quickly find any UCR Point-of-Interest at your convience like
-                  Scotty's Market, Libraries, Food Courts, Coffee Shops, Bike
-                  Racks, and more!
-                </p>
-              </Col>
-            </Row>
-            <Row>
-              <Col xs={12} sm={4}>
-                <h3>Classroom Navigation</h3>
-                <p>
-                  Get directions from anywhere right to your classroom door! No
-                  more getting lost getting around UCR!
-                </p>
-              </Col>
-              <Col xs={12} sm={4}>
-                <h3>Class Schedule Management</h3>
-                <p>
-                  Keep track of your classes all in one easy to access place!
-                  Once your classes schedule is in the app, it makes navigating
-                  to them easier!
-                </p>
-              </Col>
-              <Col xs={12} sm={4}>
-                <h3>UCR Points-of-Interest</h3>
-                <p>
-                  Quickly find any UCR Point-of-Interest at your convience like
-                  Scotty's Market, Libraries, Food Courts, Coffee Shops, Bike
-                  Racks, and more!
-                </p>
-              </Col>
-            </Row>
-            <div />
-          </Container>
-        </div>
+                <div className="feature block">
+                  <div className="feature-icon">
+                    <i className="fa fa-book rounded" />
+                  </div>
+                  <h5>Class Schedule Management</h5>
+                  <p>
+                    Keep track of your classes all in one easy to access place!
+                    Once your classes schedule is in the app, it makes
+                    navigating to them easier!
+                  </p>
+                </div>
+
+                <div className="feature block">
+                  <div className="feature-icon">
+                    <i className="fa fa fa-mouse-pointer rounded" />
+                  </div>
+                  <h5>UCR Points-of-Interest</h5>
+                  <p>
+                    Quickly find any UCR Point-of-Interest at your convience
+                    like Scotty's Market, Libraries, Food Courts, Coffee Shops,
+                    Bike Racks, and more!
+                  </p>
+                </div>
+              </div>
+
+              <div className="col-md-4 center-feature-image">
+                <img
+                  src="https://i.imgur.com/zILUpf8.jpg"
+                  alt=""
+                  className="feature-picture"
+                />{" "}
+              </div>
+
+              <div className="col-md-4 feature-right">
+                <div className="feature block">
+                  <div className="feature-icon">
+                    <i className="fa fa-calendar rounded" />
+                  </div>
+                  <h5>School Events</h5>
+                  <p>
+                    Never miss another school event with up to date info on
+                    Student Development Workshops, ASUCR Events/Concerts, and
+                    Undergraduate Reasearch Opportunites!
+                  </p>
+                </div>
+
+                <div className="feature block">
+                  <div className="feature-icon">
+                    <i className="fa fa-book rounded" />
+                  </div>
+                  <h5>School Clubs</h5>
+                  <p>
+                    Always be up to date with all your schoo clubs! Never miss a
+                    club event again!
+                  </p>
+                </div>
+
+                <div className="feature block">
+                  <div className="feature-icon">
+                    <i className="fa fa-registered rounded" />
+                  </div>
+                  <h5>R Coin</h5>
+                  <p>
+                    Explore around campus to earn R-Coins! Use them to customize
+                    your student experience!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <Container fluid className="bg-light">
           <div className="pb-2 mt-4 mb-2 text-center">
-            <h1>The Team</h1>
+            <h1 className="pt-5 mt-5">The Team</h1>
           </div>
           <Row className="show-grid text-center">
             <Col xs={12} sm={3}>
@@ -153,7 +183,22 @@ class HomePage extends Component {
               <p className="lead">Product Engineer</p>
             </Col>
           </Row>
-          </Container>
+        </Container>
+
+        <Container fluid className="bg-dark text-center">
+          <p>© 2018 CampusMate. All Rights Reserved.</p>
+          <ul class="list-inline">
+            <li className="list-inline-item">
+              <a href="#">Privacy</a>
+            </li>
+            <li className="list-inline-item">
+              <a href="#">Terms</a>
+            </li>
+            <li className="list-inline-item">
+              <a href="#">FAQ</a>
+            </li>
+          </ul>
+        </Container>
       </div>
     );
   }
