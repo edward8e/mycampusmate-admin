@@ -22,6 +22,8 @@ import dylan from "../assets/profile/dylan.jpeg";
 
 import "./HomePage.scss";
 
+//<h3 className="display-3 pr-1 mt-5 mb-5">RMate</h3>
+
 class HomePage extends Component {
   render() {
     return (
@@ -29,18 +31,22 @@ class HomePage extends Component {
         <div>
           <NavBar />
 
-          <Jumbotron className="display-4">
+          {/* <Jumbotron className="display-4">
             <Row>
               <Col xs={12} sm={6}>
                 <img
                   src="https://www.kingstudio.ro/demos/theone/images/apps.png"
                   alt=""
-                  className="app-picture mx-auto d-block"
+                  className="app-picture mx-auto d-block img-fluid pr-3"
                 />
               </Col>
 
               <Col xs={12} sm={6}>
-                <h3 className="display-3 pr-1 mt-5 mb-5">RMate</h3>
+                <img
+                  src="https://rmate-backend.herokuapp.com/api/static/rmate_logo_white.svg"
+                  alt=""
+                  className="app-logo img-fluid"
+                />
                 <p className="text-left pr-5 mr-5 pb-2 header-brand">
                   RMate is your One-Stop-Shop for student success
                 </p>
@@ -64,52 +70,55 @@ class HomePage extends Component {
               </Col>
             </Row>
           </Jumbotron>
+          </div> */}
 
           {/* Other Design */}
-          {/* <Jumbotron className="display-4">
-          <div className="header-content" />
-          <div className="row">
-            <div className="col-sm-6 header-content-details">
-              <h3 className="header-brand">
-                This is THE
-                <span className="text-primary">ONE</span>{" "}
-              </h3>
-              <h3>The Best App Landing Page Template</h3>
-              <p>
-                Qusinque rhoncus tempus sem sed ornare. Aenean viverra ornare
-                dui nec mollis. Vestibulum in dui sed velit consequat. Cum
-                sociis natoque penatibus et magnis dis parturient montes.
-              </p>
 
-              <p className="download-buttons">
-                <a href="#">
-                  <img
-                    src="https://www.kingstudio.ro/demos/theone/images/app-store.png"
-                    alt="app-store"
-                  />
-                </a>
-                <a href="#">
-                  <img
-                    src="https://edward8e.github.io/Rmate_site/img/google-play-badge.svg"
-                    alt="play-store"
-                  />
-                </a>
-              </p>
-            </div>
+          <Jumbotron className="display-4 dark-header">
+            <div class="container">
+              <div className="header-content" />
+              <div className="row">
+                <div className="col-sm-6 header-content-details">
+                  <h3 className="pr-5 mr-5 pb-2 header-brand">
+                    <span class="gold header-brand">RMate </span>
+                    
+                    is your One-Stop-Shop for student success
+                  </h3>
 
-            <div className="col-sm-6">
-              <div className="header-image">
-                <img
-                  src="https://www.kingstudio.ro/demos/theone/images/apps.png"
-                  alt=""
-                  className="app-picture mx-auto d-block"
-                />
+                  <p className="download-buttons">
+                    <a href="https://itunes.apple.com/app/id1418361482">
+                      <img
+                        src="https://www.kingstudio.ro/demos/theone/images/app-store.png"
+                        alt="app-store"
+                        className="app-store mx-auto"
+                      />
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.mycampusmate.rmate">
+                      <img
+                        src="https://edward8e.github.io/Rmate_site/img/google-play-badge.svg"
+                        alt="play-store"
+                        className="app-store"
+                      />
+                    </a>
+                  </p>
+                </div>
+
+                <div className="col-sm-6">
+                  <div className="header-image">
+                    <img
+                      src="https://www.kingstudio.ro/demos/theone/images/apps.png"
+                      alt=""
+                      className="app-picture mx-auto d-block img-fluid pr-3"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+            </Jumbotron>
         </div>
-        </Jumbotron> */}
-        </div>
+
+
+        {/* How Section */}
 
         <section id="how" className="style-2">
           <div className="container">
@@ -156,7 +165,6 @@ class HomePage extends Component {
                   <h4>International Students</h4>
                 </div>
               </div>
-
             </div>
           </div>
         </section>
@@ -368,12 +376,13 @@ class HomePage extends Component {
                 placeholder="Your Email Here..."
               />
               <span className="input-group-btn">
-                <Button className="btn btn-md btn-primary-filled btn-left btn-newsletter btn-rounded" color="yellow">
-                <i className="fa fa-sign-in pr-2" />
+                <Button
+                  className="btn btn-md btn-primary-filled btn-left btn-newsletter btn-rounded"
+                  color="yellow"
+                >
+                  <i className="fa fa-sign-in pr-2" />
                   <span>Request</span>
-                
-                </Button>{' '}
-
+                </Button>{" "}
                 {/* <button
                   className="btn btn-md btn-primary-filled btn-left btn-newsletter btn-rounded"
                   type="button"

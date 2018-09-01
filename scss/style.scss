@@ -3438,14 +3438,15 @@ input[type="button"].btn-block {
     background-color: #181b1e; }
 
 .jumbotron {
-  background-image: url('../src/assets/logo/ucr_highlander.jpg');
-  // background-image: url('../src/assets/logo/ucr_campus.jpg');
+  // background-image: url('../src/assets/logo/ucr_highlander.jpg');
+  background-image: url('https://i.imgur.com/52N95gE.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   padding: 2rem 1rem;
   // margin-bottom: 2rem;
   background-color: #e4e7ea;
-  border-radius: 0.3rem; }
+  // border-radius: 0.3rem; 
+}
 
   @media (min-width: 576px) {
     .jumbotron {

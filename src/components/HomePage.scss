@@ -9,6 +9,11 @@ width: 540px;
 height:521px;
 }
 
+.app-logo {
+  width: 250px;
+  height:100px;
+}
+
 .feature-picture {
   width: 340px;
   height:491px;
@@ -201,11 +206,16 @@ height:521px;
 //HEADER
 
 .header-content {
-  padding: 70px 0;
+  // padding: 80px 0;
+  padding-top: 80px;
+  
   .col-sm-6 .header-image img {
     margin-left: 0 !important;
+    margin-bottom: 50px !important;
+
   }
 }
+
 
 .header-content-details {
   padding: 110px 15px;
@@ -231,10 +241,23 @@ height:521px;
 }
 
 #header-9 {
-  // background-image: url("../images/header-img9.jpg");
+  background-image: url("https://i.imgur.com/52N95gE.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.dark-header {
+  background-color: #272733;
+}
+
+.dark-header {
+  h3, h5 {
+    color: white;
+  }
+  p {
+    color: #cccccc;
+  }
 }
 
  /* Team */
@@ -311,7 +334,7 @@ footer {
 }
 
 .color-footer {
-  background: #2D6CC0;
+  background: #0D2D5C;
   p {
     color: white;
   }
@@ -565,7 +588,7 @@ footer {
 /* End How it Works */
 
 .club {
-  background-color: #234674 !important;
+  background-color: #2D6CC0 !important;
   // // background-image: url('https://assets.ucr.edu/localist/images/bg-ucr-footer.jpg') !important;
   // background-image: url('../assets/logo/ucr_highlander.jpg') !important;
   // // opacity: 0.5;
