@@ -106,7 +106,7 @@ class HomePage extends Component {
                 <div className="col-sm-6">
                   <div className="header-image">
                     <img
-                      src="https://www.kingstudio.ro/demos/theone/images/apps.png"
+                      src="https://i.imgur.com/z1Wg2JD.png"
                       alt=""
                       className="app-picture mx-auto d-block img-fluid pr-3"
                     />
