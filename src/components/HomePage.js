@@ -191,7 +191,7 @@ class HomePage extends Component {
                   <div className="feature-icon">
                     <i className="fa fa-book rounded" />
                   </div>
-                  <h5>className Schedule Management</h5>
+                  <h5>Class Schedule Management</h5>
                   <p>
                     Keep track of your classes all in one easy to access place!
                     Once your classes schedule is in the app, it makes
@@ -239,7 +239,7 @@ class HomePage extends Component {
                   </div>
                   <h5>School Clubs</h5>
                   <p>
-                    Always be up to date with all your schoo clubs! Never miss a
+                    Always be up to date with all your school clubs! Never miss a
                     club event again!
                   </p>
                 </div>
