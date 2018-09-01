@@ -368,13 +368,19 @@ class HomePage extends Component {
                 placeholder="Your Email Here..."
               />
               <span className="input-group-btn">
-                <button
-                  className="btn btn-md btn-primary-filled btn-left btn-newsletter btn-rounded inside"
+                <Button className="btn btn-md btn-primary-filled btn-left btn-newsletter btn-rounded" color="yellow">
+                <i className="fa fa-sign-in pr-2" />
+                  <span>Request</span>
+                
+                </Button>{' '}
+
+                {/* <button
+                  className="btn btn-md btn-primary-filled btn-left btn-newsletter btn-rounded"
                   type="button"
                 >
                   <i className="fa fa-sign-in" />
                   <span>Subscribe</span>
-                </button>
+                </button> */}
               </span>
             </div>
           </div>
