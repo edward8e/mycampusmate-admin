@@ -20,7 +20,7 @@ import edward from "../assets/profile/edward.jpg";
 import jorge from "../assets/profile/jorge.jpg";
 import dylan from "../assets/profile/dylan.jpeg";
 
-import './HomePage.scss';
+import "./HomePage.scss";
 
 class HomePage extends Component {
   render() {
@@ -110,6 +110,56 @@ class HomePage extends Component {
         </div>
         </Jumbotron> */}
         </div>
+
+        <section id="how" className="style-2">
+          <div className="container">
+            <div className="page-header text-center">
+              <h2>Audience</h2>
+            </div>
+            <div className="row">
+              <div className="col-sm-3 hiw">
+                <div className="how block">
+                  <div className="how-icon">
+                    {/* <span className="step-badge rounded">1</span> */}
+                    <i className="fa fa-sign-in rounded" />
+                  </div>
+                  <h4>Incoming Students</h4>
+                </div>
+              </div>
+
+              <div className="col-sm-3 hiw">
+                <div className="how block">
+                  <div className="how-icon">
+                    {/* <span className="step-badge rounded">2</span> */}
+                    <i className="fa fa-download rounded" />
+                  </div>
+                  <h4>Current Students</h4>
+                </div>
+              </div>
+
+              <div className="col-sm-3 hiw">
+                <div className="how block">
+                  <div className="how-icon">
+                    {/* <span className="step-badge rounded">3</span> */}
+                    <i className="fa fa-exchange rounded" />
+                  </div>
+                  <h4>Transfer Students</h4>
+                </div>
+              </div>
+
+              <div className="col-sm-3 hiw">
+                <div className="how block">
+                  <div className="how-icon">
+                    {/* <span className="step-badge rounded">4</span> */}
+                    <i className="fa fa-plane rounded" />
+                  </div>
+                  <h4>International Students</h4>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
 
         <section id="more-features" className="centered-features fluid">
           <div className="container">
@@ -229,6 +279,20 @@ class HomePage extends Component {
           </Row>
         </Container> */}
 
+        {/* <section id="cta" className="parallax dark-bg">
+          <div className="container">
+            <div className="cta-content">
+              <h2 className="cta-title">Club Organizations</h2>
+              <p className="text-sm cta-description">
+                Are you a leader of a club organization? Send us a e-mail and we
+                will give you exclusive permission to access our in-app features
+                for your respective clubs!
+              </p>
+              <p className="cta-info">Download the App Now from:</p>
+            </div>
+          </div>
+        </section> */}
+
         <section id="team">
           <div className="container">
             <div className="page-header text-center">
@@ -288,8 +352,33 @@ class HomePage extends Component {
           </ul>
         </Container> */}
 
-
-
+        {/* //Club organization, email us */}
+        <section id="newsletter" className="club">
+          <div className="container">
+            <div className="page-header text-center">
+              <h2 className="text-white">
+                Request Access for a{" "}
+                <span className="gold">Club Organization</span>
+              </h2>
+            </div>
+            <div className="input-group">
+              <input
+                type="text"
+                className="form-control rounded"
+                placeholder="Your Email Here..."
+              />
+              <span className="input-group-btn">
+                <button
+                  className="btn btn-md btn-primary-filled btn-left btn-newsletter btn-rounded inside"
+                  type="button"
+                >
+                  <i className="fa fa-sign-in" />
+                  <span>Subscribe</span>
+                </button>
+              </span>
+            </div>
+          </div>
+        </section>
 
         <footer className="color-footer">
           <div className="container">

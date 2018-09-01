@@ -94,7 +94,7 @@ height:521px;
 
 .block {
   i {
-    color: #F1AB00;
+    color: #2D6CC0; 
     font-size: 22px;
   }
   img {
@@ -117,7 +117,7 @@ height:521px;
 }
 
 .feature-icon i {
-  border: 2px solid #2D6CC0;
+  border: 2px solid #F1AB00;
   border-radius: 50%;
   padding: 20px;
 }
@@ -330,3 +330,254 @@ footer {
 }
 
 /* End Footers */
+
+ /* Newsletter */
+  
+ #newsletter {
+  background-image: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0;
+}
+
+.widget-area #newsletter {
+  padding: 0;
+}
+
+#newsletter {
+  &.light {
+    background-color: #ebebeb;
+  }
+  &.dark {
+    background-color: #272733;
+    .page-header h2 {
+      color: white;
+    }
+  }
+  .form-control {
+    color: #666666;
+    background: #f7f7f7;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    border: 1px solid #ebebeb;
+    border-radius: 0;
+    padding: 10px 20px;
+    min-height: 50px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    z-index: 1;
+  }
+  .input-group {
+    width: 60%;
+    margin: 0 auto;
+  }
+  .input-group-btn {
+    vertical-align: top;
+  }
+}
+
+.btn-newsletter {
+  padding: 14px 24px;
+  margin-left: 20px !important;
+  border-radius: 0;
+  z-index: 2;
+}
+
+#newsletter {
+  .btn-newsletter.inside {
+    margin-left: 0 !important;
+  }
+  .btn-left.btn-newsletter.inside {
+    margin-left: -140px !important;
+    margin-top: 0;
+    z-index: 999;
+  }
+  &.no-icons .btn-left.btn-newsletter.inside {
+    margin-left: -112px !important;
+  }
+}
+
+/* End Newsletter */
+
+ /* Primary Button */
+  
+ .btn-primary {
+  color: #1fc585;
+  border: 2px solid #1fc585;
+  background: transparent;
+  &:active, &:focus {
+    color: #1fc585;
+    border: 2px solid #1fc585;
+    background: transparent;
+  }
+  &:hover {
+    color: white;
+    background: #1fc585;
+    border: 2px solid #1fc585;
+  }
+}
+
+.btn-primary-filled {
+  color: white;
+  background: #1fc585;
+  border: 2px solid #1fc585;
+  &:active, &:focus {
+    color: white;
+    background: #1fc585;
+    border: 2px solid #1fc585;
+  }
+  &:hover {
+    color: white;
+    background: #19835a;
+    border: 2px solid #19835a;
+  }
+}
+
+/* / End Primary Button */
+/* Success Button */
+
+.btn-success {
+  color: #1fc55a;
+  border: 2px solid #1fc55a;
+  background: transparent;
+  &:active, &:focus {
+    color: #1fc55a;
+    border: 2px solid #1fc55a;
+    background: transparent;
+  }
+  &:hover {
+    color: white;
+    background: #1fc55a;
+    border: 2px solid #1fc55a;
+  }
+}
+
+.btn-success-filled {
+  color: white;
+  background: #1fc55a;
+  border: 2px solid #1fc55a;
+  &:active, &:focus {
+    color: white;
+    background: #1fc55a;
+    border: 2px solid #1fc55a;
+  }
+  &:hover {
+    color: white;
+    background: #147a38;
+    border: 2px solid #147a38;
+  }
+}
+
+/* / End Success Button */
+
+/* How it Works */
+  
+#how {
+  background-image: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #f7f7f7;
+  padding: 90px 0;
+}
+
+.hiw {
+  text-align: left;
+  padding: 50px 30px 30px 90px;
+}
+
+.hiw-content {
+  padding: 80px 15px;
+  padding: 30px 15px;
+  .hiw.next-indicator:after {
+    width: 13%;
+  }
+}
+
+.hiw.next-indicator:after {
+  color: #cccccc;
+  content: "\f178";
+  font-family: FontAwesome;
+  display: block;
+  width: 33%;
+  height: 4px;
+  position: absolute;
+  right: 0;
+  top: 50px;
+}
+
+.step-badge {
+  color: white;
+  background: #373e62;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  line-height: 16px;
+  padding: 5px;
+  font-size: 12px;
+  position: absolute;
+  top: -15px;
+  left: -7px;
+  text-align: center;
+  z-index: 99;
+  float: left;
+
+}
+
+#how.style-2 .step-badge {
+  top: -25px;
+  left: -10px;
+  border-radius: 0;
+  top: -25px;
+  left: -10px;
+}
+
+.how-icon {
+  position: absolute;
+  float: left;
+  left: 15px;
+  i {
+    color: #2D6CC0;
+    background: transparent;
+    border: 2px solid #2D6CC0;
+    border-radius: 50%;
+    font-size: 20px;
+    padding: 15px;
+  }
+}
+
+ 
+
+#how.style-2 .how-icon i {
+  border: 2px solid #F1AB00;
+  border-radius: 0;
+}
+
+.hiw h4 {
+  margin-bottom: 10px;
+  margin-left: 80px;
+}
+
+/* End How it Works */
+
+.club {
+  background-color: #234674 !important;
+  // // background-image: url('https://assets.ucr.edu/localist/images/bg-ucr-footer.jpg') !important;
+  // background-image: url('../assets/logo/ucr_highlander.jpg') !important;
+  // // opacity: 0.5;
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // padding: 2rem 1rem;
+
+}
+
+.rounded {
+  border-radius: 5px !important;
+}
+
+.gold{
+  color: #F1AB00 !important; }
