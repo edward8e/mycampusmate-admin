@@ -304,7 +304,7 @@ class HomePage extends Component {
         <section id="team">
           <div className="container">
             <div className="page-header text-center">
-              <h2>The Development Team</h2>
+              <h2>Development Team</h2>
             </div>
             <Row>
               {/* <div className="row"> */}
