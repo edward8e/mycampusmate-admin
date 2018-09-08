@@ -75,12 +75,12 @@ class HomePage extends Component {
           {/* Other Design */}
 
           <Jumbotron className="display-4 dark-header">
-            <div class="container">
+            <div className="container">
               <div className="header-content" />
               <div className="row">
                 <div className="col-sm-6 header-content-details">
                   <h3 className="pr-5 mr-5 pb-2 header-brand">
-                    <span class="gold header-brand">RMate </span>
+                    <span className="gold header-brand">RMate </span>
                     
                     is your One-Stop-Shop for student success
                   </h3>

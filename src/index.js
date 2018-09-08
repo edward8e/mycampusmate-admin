@@ -25,7 +25,8 @@ import AboutPage from '../src/components/AboutPage';
 ReactDOM.render((
   <HashRouter>
     <Switch>
-      <Route path="/" name="Home" component={Full}/>
+      <Route path="/about" name="About" component={AboutPage}/>
+      <Route path="/" name="Home" component={HomePage}/>
     </Switch>
   </HashRouter>
 ), document.getElementById('root'));

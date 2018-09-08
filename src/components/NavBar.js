@@ -18,7 +18,7 @@ import {
 } from "reactstrap";
 
 import { Link } from "react-router-dom";
-import './NavBar.css';
+import "./NavBar.css";
 
 export default class NavBar extends Component {
   constructor(props) {
@@ -56,9 +56,14 @@ export default class NavBar extends Component {
                 <NavLink href="">Contact Us</NavLink>
               </NavItem> */}
               <NavItem>
-                <NavLink active tag={Link} to="/login">Login</NavLink>
-                <NavLink active tag={Link} to="/about">About</NavLink>
-
+                <NavLink active tag={Link} to="/about">
+                  About
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink active tag={Link} to="/login">
+                  Login
+                </NavLink>
               </NavItem>
             </Nav>
           </Collapse>

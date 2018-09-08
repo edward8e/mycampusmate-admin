@@ -15,7 +15,6 @@ import ContactUs from '../../views/ContactUs/';
 import Login from '../../views/Login/Login';
 import Register from '../../views/Register/Register';
 import ForgotPassword from '../../views/ForgotPassword/ForgotPassword';
-import HomePage from '../../components/HomePage';
 import {Provider} from 'react-redux';
 //import rootReducer from '../../redux/reducers';
 
@@ -54,8 +53,6 @@ class Full extends Component {
                 <Route path="/login" name="Login" component={Login}/>
                 <Route path="/forgotpassword" name="ForgotPassword" component={ForgotPassword}/>
                 <Route path="/contactus" name="ContactUs" component={ContactUs}/>
-                <Route path="/about" name="About" component={AboutPage}/>
-                <Route path="/" name="Home" component={HomePage}/>
                 {/* <Redirect from="/" to="/login"/> */}
               </Switch>
             </Container>
