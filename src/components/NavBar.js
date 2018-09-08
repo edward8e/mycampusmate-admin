@@ -56,7 +56,9 @@ export default class NavBar extends Component {
                 <NavLink href="">Contact Us</NavLink>
               </NavItem> */}
               <NavItem>
-                <NavLink active tag={Link} to="/about">Login</NavLink>
+                <NavLink active tag={Link} to="/login">Login</NavLink>
+                <NavLink active tag={Link} to="/about">About</NavLink>
+
               </NavItem>
             </Nav>
           </Collapse>
