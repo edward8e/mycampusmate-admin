@@ -6,3 +6,5 @@ export const FORGOT_PASSWORD= 'FORGOT_PASSWORD';
 export const ADDED_EVENTS= 'ADDED_EVENTS';
 export const ERROR_EVENTS= 'ERROR_EVENTS';
 export const DELETED_EVENT= 'DELETED_EVENT';
+export const EDIT_EVENT = 'EDIT_EVENT';
+export const ERROR_EDITING = 'ERROR_EDITING';

@@ -4,6 +4,7 @@ const routes = {
   '/clubs': 'Clubs',
   '/addclubs': 'AddClubs',
   '/deleteclubs': 'DeleteClubs',
+  '/editclubs': 'EditClubs',
   '/contactus': 'Contact Us',
   '/register':'Register',
   '/login': 'Login',

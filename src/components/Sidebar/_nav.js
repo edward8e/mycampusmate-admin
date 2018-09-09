@@ -20,6 +20,11 @@ export default {
           url: '/deleteclubs',
           icon: 'fa fa-minus-circle'
         },
+        {
+          name: 'Edit a club event',
+          url: '/editclubs',
+          icon: 'icon-puzzle'
+        },
       ]
     },
     {

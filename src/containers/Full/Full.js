@@ -11,6 +11,7 @@ import Dashboard from '../../views/Dashboard/';
 import Clubs from '../../views/Clubs/Main/Clubs';
 import AddClubs from '../../views/Clubs/AddClubs/AddClubs';
 import DeleteClubs from '../../views/Clubs/DeleteClubs/DeleteClubs';
+import EditClubs from '../../views/Clubs/EditClubs/EditClubs';
 import ContactUs from '../../views/ContactUs/';
 import Login from '../../views/Login/Login';
 import Register from '../../views/Register/Register';
@@ -24,13 +25,14 @@ import authReducer from '../../redux/reducers/authReducer';
 import addEventReducer from '../../redux/reducers/addEventReducer';
 import deleteEventReducer from '../../redux/reducers/deleteEventReducer';
 import AboutPage from '../../components/AboutPage';
+import editEventReducer from '../../redux/reducers/editEventReducer';
 const allReducers = combineReducers({
   auth: authReducer,
   addEvent: addEventReducer,
   deleteEvent_ID: deleteEventReducer,
+  editClubs: editEventReducer,
 });
 const store = createStore(allReducers,{},compose(applyMiddleware(ReduxThunk)));
-//import store from '../../redux/store/index';
 
 class Full extends Component {
   render() {
@@ -49,11 +51,11 @@ class Full extends Component {
                 <Route path="/clubs" name="Clubs" component={Clubs}/>
                 <Route path="/addclubs" name="AddClubs" component={AddClubs}/>
                 <Route path="/deleteclubs" name="DeleteClubs" component={DeleteClubs}/>
+                <Route path="/editclubs" name="EditClubs" component={EditClubs}/>
                 <Route path="/register" name="Register" component={Register}/>
                 <Route path="/login" name="Login" component={Login}/>
                 <Route path="/forgotpassword" name="ForgotPassword" component={ForgotPassword}/>
                 <Route path="/contactus" name="ContactUs" component={ContactUs}/>
-                {/* <Redirect from="/" to="/login"/> */}
               </Switch>
             </Container>
           </main>
