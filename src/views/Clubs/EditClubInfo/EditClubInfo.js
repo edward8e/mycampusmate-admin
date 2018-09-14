@@ -16,77 +16,42 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import Select from "react-select";
 import "react-select/dist/react-select.css";
-import DatePicker from "react-datepicker";
-import DayPicker from "react-day-picker";
-import DayPickerInput from "react-day-picker/DayPickerInput";
-import "react-day-picker/lib/style.css";
-import "react-day-picker/lib/style.css";
-import "rc-time-picker/assets/index.css";
-import moment from "moment";
-import TimePicker from "rc-time-picker";
-const format = "h:mm a";
-const now = moment()
-  .hour(0)
-  .minute(0);
-import {
-  fetchEditAPI,
-  editEventSuccess,
-  editEventError
-} from "../../../redux/actions/editEventActions";
 
-class EditClubs extends Component {
+import {editClubInfo,editClub} from '../../../redux/actions/editClubInfoAction';
+class EditClubInfo extends Component {
   constructor(props) {
     super(props);
-    this.handleStartDayClick = this.handleStartDayClick.bind(this);
-    this.handleStartTimePick = this.handleStartTimePick.bind(this);
-    this.handleEndDayClick = this.handleEndDayClick.bind(this);
-    this.handleEndTimePick = this.handleEndTimePick.bind(this);
     this.handleClubNameChange = this.handleClubNameChange.bind(this);
-    this.handleClubEventChange = this.handleClubEventChange.bind(this);
-    this.editEvent = this.editEvent.bind(this);
+    this.editClubInfo = this.editClubInfo.bind(this);
+
     this.state = {
+      club_url : "",
       selectedOption: null,
-      allEvents: [],
-      allEventsName: [],
-      start_selectedDay: "",
-      end_selectedDay: "",
-      start_time: "",
-      end_time: "",
-      clubUrl: "",
-      clubInfo: null,
-      start_time: "",
-      end_time: "",
-      test: "",
+      clubName: null,
+      allEventsName: [], 
       name: "",
-      description: "",
-      dayoftheweek: "",
-      starttime: "",
-      endtime: "",
-      largeimg: "",
-      medimg: "",
-      location: "",
+      description: [],
+      additional_info: [],
+      address: "",
+      email: "",
+      icon_src: "",
+      photo_album: "",
+      social_urls: [],
+      phone_number:"",
       id: "",
       editObject: {
-        id: "",
+        url: "",
         name: "",
-        description: "",
-        dayoftheweek: "",
-        starttime: "",
-        endtime: "",
-        largeimg: "",
-        medimg: "",
-        location: ""
+        description: [],
+        additional_info: [],
+        address: "",
+        email: "",
+        icon_src: "",
+        photo_album: "",
+        social_urls: [],
+        phone_number:"",
       }
     };
-  }
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.editSuccess != this.props.editSuccess) {
-      if (nextProps.editSuccess == "Success") {
-        alert(nextProps.editSuccess);
-        this.props.editEventSuccess("False");
-        this.props.history.push("/dashboard");
-      }
-    }
   }
   dynamicSort(property) {
     var sortOrder = 1;
@@ -99,6 +64,15 @@ class EditClubs extends Component {
         a[property] < b[property] ? -1 : a[property] > b[property] ? 1 : 0;
       return result * sortOrder;
     };
+  }
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.editClub != this.props.editClub) {
+      if (nextProps.editClub == "Success") {
+        alert(nextProps.editClub);
+        this.props.editClub("False");
+        this.props.history.push("/dashboard");
+      }
+    }
   }
   componentDidMount() {
     var i = "1";
@@ -115,58 +89,32 @@ class EditClubs extends Component {
               allEventsName: [...this.state.allEventsName, res[parseInt(j)]]
             });
             this.state.allEventsName.sort(this.dynamicSort("name")); // we need a spinner to give a couple seconds
+            
           }
         });
     }
-  }
-  handleStartDayClick(day) {
-    this.setState({ start_selectedDay: day });
-  }
-  handleStartTimePick(value) {
-    this.setState({ start_time: value.format(format) });
-    var day_start = moment(this.state.start_selectedDay).format("YYYY-MM-DD");
-    var time_start = moment(this.state.start_time, ["h:mm A"]).format("HH:mm");
-    var startTime = day_start + " " + time_start + ":00.000000";
-    this.setState({
-      editObject: { ...this.state.editObject, starttime: startTime }
-    });
-  }
-  handleEndDayClick(day) {
-    this.setState({ end_selectedDay: day });
-  }
-  handleEndTimePick(value) {
-    this.setState({ end_time: value.format(format) });
-    var day_end = moment(this.state.end_selectedDay).format("YYYY-MM-DD");
-    var time_end = moment(this.state.end_time, ["h:mm A"]).format("HH:mm");
-    var endTime = day_end + " " + time_end + ":00.000000";
-    this.setState({
-      editObject: { ...this.state.editObject, endtime: endTime }
-    });
   }
   handleClubNameChange(club) {
     if (club != null) {
-      this.setState({ clubUrl: club });
-      console.log(`Option selected:`, club._url);
-      fetch(
-        "https://cors-anywhere.herokuapp.com/https://www.mycampusmate.com/api/organizations/" +
-          club._url +
-          "/events"
-      )
-        .then(res => res.json())
-        .then(res => {
-          if (res.length == 0) {
-            console.log("Hello");
-            this.setState({ allEvents: res });
-            this.setState({ clubInfo: null });
-          } else {
-            for (var i = 0; i < res.length; i++) {
-              this.setState({ allEvents: [...this.state.allEvents, res[i]] });
-            }
-          }
-        });
+        console.log(club)
+      this.setState({ clubName: club });
+      this.setState({editObject: {...this.state.editObject, url: club._url} })
     }
   }
   updateInput(event) {
+    if(event.target.name == "additional_info"){
+        this.setState({additional_info: event.target.value.split(",")})
+        this.setState({editObject: {...this.state.editObject, [event.target.name]: this.state.additional_info}})
+    }
+    else if(event.target.name == "description"){
+        this.setState({description: event.target.value.split(",")})
+        this.setState({editObject: {...this.state.editObject, [event.target.name]: this.state.description}})
+    }
+    else if(event.target.name == "social_urls"){
+        this.setState({social_urls: event.target.value.split(",")})
+        this.setState({editObject: {...this.state.editObject, [event.target.name]: this.state.social_urls}})
+    }
+    else{
     this.setState({ [event.target.name]: event.target.value });
     this.setState({
       editObject: {
@@ -174,17 +122,11 @@ class EditClubs extends Component {
         [event.target.name]: event.target.value
       }
     });
-  }
-  handleClubEventChange(club) {
-    if (club != null) {
-      this.setState({ clubInfo: club });
-      this.setState({ editObject: { ...this.state.editObject, id: club.id } });
     }
   }
-  editEvent() {
-    console.log(this.state.editObject);
-    this.props.fetchEditAPI(this.state.editObject);
-  }
+  editClubInfo(){
+    this.props.editClubInfo(this.state.editObject);
+}
   render() {
     return (
       <div className="app flex-row align-items-center">
@@ -194,26 +136,18 @@ class EditClubs extends Component {
               <CardGroup>
                 <Card className="p-4">
                   <CardBody>
-                    <h1>Edit an Event</h1>
+                    <h1>Edit club info</h1>
                     <Select
-                      value={this.state.clubUrl}
+                      value={this.state.clubName}
                       onChange={this.handleClubNameChange}
                       placeholder="Select a Club Name"
                       labelKey="name"
                       valueKey="id"
                       options={this.state.allEventsName}
+                     
                     />
 
-                    <Select
-                      value={this.state.clubInfo}
-                      onChange={this.handleClubEventChange}
-                      placeholder="Select a Club Event to edit"
-                      labelKey="name"
-                      valueKey="id"
-                      options={this.state.allEvents}
-                    />
-
-                    {this.state.clubInfo != null && (
+                    {this.state.clubName != null && (
                       <div>
                         <CardGroup>
                           <Card className="p-4">
@@ -240,6 +174,48 @@ class EditClubs extends Component {
                                 </div>
                                 <Input
                                   type="text"
+                                  placeholder="email"
+                                  name="email"
+                                  value={this.state.email}
+                                  onChange={this.updateInput.bind(this)}
+                                />
+                              </InputGroup>
+                              <InputGroup className="mb-3">
+                                <div className="input-group-prepend">
+                                  <span className="input-group-text">
+                                    <i className="icon-user" />
+                                  </span>
+                                </div>
+                                <Input
+                                  type="text"
+                                  placeholder="address"
+                                  name="address"
+                                  value={this.state.address}
+                                  onChange={this.updateInput.bind(this)}
+                                />
+                              </InputGroup>
+                              <InputGroup className="mb-3">
+                                <div className="input-group-prepend">
+                                  <span className="input-group-text">
+                                    <i className="icon-user" />
+                                  </span>
+                                </div>
+                                <Input
+                                  type="text"
+                                  placeholder="additional info"
+                                  name="additional_info"
+                                  value={this.state.additional_info}
+                                  onChange={this.updateInput.bind(this)}
+                                />
+                              </InputGroup>
+                              <InputGroup className="mb-3">
+                                <div className="input-group-prepend">
+                                  <span className="input-group-text">
+                                    <i className="icon-user" />
+                                  </span>
+                                </div>
+                                <Input
+                                  type="text"
                                   placeholder="description"
                                   name="description"
                                   value={this.state.description}
@@ -254,61 +230,9 @@ class EditClubs extends Component {
                                 </div>
                                 <Input
                                   type="text"
-                                  placeholder="day of the week"
-                                  name="dayoftheweek"
-                                  value={this.state.dayoftheweek}
-                                  onChange={this.updateInput.bind(this)}
-                                />
-                              </InputGroup>
-                              <InputGroup className="mb-3">
-                                <div className="input-group-prepend">
-                                  <span className="input-group-text">
-                                    <i>Start time</i>
-                                  </span>
-                                </div>
-                                <DayPickerInput
-                                  onDayChange={this.handleStartDayClick}
-                                />
-                                <TimePicker
-                                  showSecond={false}
-                                  defaultValue={now}
-                                  className="xxx"
-                                  onChange={this.handleStartTimePick}
-                                  format={format}
-                                  use12Hours
-                                  inputReadOnly
-                                />
-                              </InputGroup>
-                              <InputGroup className="mb-3">
-                                <div className="input-group-prepend">
-                                  <span className="input-group-text">
-                                    <i>End time</i>
-                                  </span>
-                                </div>
-                                <DayPickerInput
-                                  onDayChange={this.handleEndDayClick}
-                                />
-                                <TimePicker
-                                  showSecond={false}
-                                  defaultValue={now}
-                                  className="xxx"
-                                  onChange={this.handleEndTimePick}
-                                  format={format}
-                                  use12Hours
-                                  inputReadOnly
-                                />
-                              </InputGroup>
-                              <InputGroup className="mb-3">
-                                <div className="input-group-prepend">
-                                  <span className="input-group-text">
-                                    <i className="icon-user" />
-                                  </span>
-                                </div>
-                                <Input
-                                  type="text"
-                                  placeholder="img large src"
-                                  name="largeimg"
-                                  value={this.state.largeimg}
+                                  placeholder="icon"
+                                  name="icon_src"
+                                  value={this.state.icon_src}
                                   onChange={this.updateInput.bind(this)}
                                 />
                               </InputGroup>
@@ -320,9 +244,9 @@ class EditClubs extends Component {
                                 </div>
                                 <Input
                                   type="text"
-                                  placeholder="img med src"
-                                  name="medimg"
-                                  value={this.state.medimg}
+                                  placeholder="phone number"
+                                  name="phone_number"
+                                  value={this.state.phone_number}
                                   onChange={this.updateInput.bind(this)}
                                 />
                               </InputGroup>
@@ -333,11 +257,25 @@ class EditClubs extends Component {
                                   </span>
                                 </div>
                                 <Input
-                                  name="location"
-                                  value={this.state.location}
+                                  type="text"
+                                  placeholder="photo album"
+                                  name="photo_album"
+                                  value={this.state.photo_album}
+                                  onChange={this.updateInput.bind(this)}
+                                />
+                              </InputGroup>
+                              <InputGroup className="mb-3">
+                                <div className="input-group-prepend">
+                                  <span className="input-group-text">
+                                    <i className="icon-user" />
+                                  </span>
+                                </div>
+                                <Input
+                                  name="social_urls"
+                                  value={this.state.social_urls}
                                   onChange={this.updateInput.bind(this)}
                                   type="text"
-                                  placeholder="location"
+                                  placeholder="social urls"
                                 />
                               </InputGroup>
                             </CardBody>
@@ -345,7 +283,7 @@ class EditClubs extends Component {
                         </CardGroup>
 
                         <Button
-                          onClick={this.editEvent}
+                          onClick={this.editClubInfo}
                           color="primary"
                           className="mt-3"
                           active
@@ -365,15 +303,15 @@ class EditClubs extends Component {
   }
 }
 
-const mapStateToProps = ({ editClubs }) => {
-  return {
-    editSuccess: editClubs.editSuccess,
-    errorEdit: editClubs.errorEdit
+const mapStateToProps = ({ editClub }) => {
+    return {
+        editClubSuccess: editClub.editClubSuccess,
+    };
   };
-};
-export default withRouter(
-  connect(
-    mapStateToProps,
-    { fetchEditAPI, editEventSuccess, editEventError }
-  )(EditClubs)
-);
+  export default withRouter(
+    connect(
+      mapStateToProps,
+      { editClubInfo,editClub }
+    )(EditClubInfo)
+  );
+  

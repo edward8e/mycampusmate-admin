@@ -22,7 +22,12 @@ export default {
         },
         {
           name: 'Edit a club event',
-          url: '/editclubs',
+          url: '/editevent',
+          icon: 'icon-puzzle'
+        },
+        {
+          name: 'Edit a club',
+          url: '/editclubinfo',
           icon: 'icon-puzzle'
         },
       ]
