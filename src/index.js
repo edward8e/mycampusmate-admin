@@ -4,7 +4,10 @@ import {HashRouter, Route, Switch} from 'react-router-dom';
 
 // Styles
 import '../src/components/NavBar.css';
-import '../src/components/HomePage.scss';
+// import '../src/components/HomePage.scss';
+import '../src/components/AboutPage.scss';
+
+
 
 // Import Flag Icons Set
 import 'flag-icon-css/css/flag-icon.min.css';
@@ -25,7 +28,8 @@ import AboutPage from '../src/components/AboutPage';
 ReactDOM.render((
   <HashRouter>
     <Switch>
-      <Route path="/" name="Home" component={Full}/>
+      <Route path="/about" name="Home" component={AboutPage}/>
+      <Route path="/" name="Home" component={HomePage}/>
     </Switch>
   </HashRouter>
 ), document.getElementById('root'));

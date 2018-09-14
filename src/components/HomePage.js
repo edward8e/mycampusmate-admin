@@ -19,10 +19,9 @@ import richard from "../assets/profile/richard.jpg";
 import edward from "../assets/profile/edward.jpg";
 import jorge from "../assets/profile/jorge.jpg";
 import dylan from "../assets/profile/dylan.jpeg";
+import michalis from "../assets/profile/michalis.jpg";
 
 import "./HomePage.scss";
-
-//<h3 className="display-3 pr-1 mt-5 mb-5">RMate</h3>
 
 class HomePage extends Component {
   render() {
@@ -31,57 +30,15 @@ class HomePage extends Component {
         <div>
           <NavBar />
 
-          {/* <Jumbotron className="display-4">
-            <Row>
-              <Col xs={12} sm={6}>
-                <img
-                  src="https://www.kingstudio.ro/demos/theone/images/apps.png"
-                  alt=""
-                  className="app-picture mx-auto d-block img-fluid pr-3"
-                />
-              </Col>
+          {/* Header Section */}
 
-              <Col xs={12} sm={6}>
-                <img
-                  src="https://rmate-backend.herokuapp.com/api/static/rmate_logo_white.svg"
-                  alt=""
-                  className="app-logo img-fluid"
-                />
-                <p className="text-left pr-5 mr-5 pb-2 header-brand">
-                  RMate is your One-Stop-Shop for student success
-                </p>
-
-                <p className="lead">
-                  <a href="https://play.google.com/store/apps/details?id=com.mycampusmate.rmate">
-                    <img
-                      src="https://edward8e.github.io/Rmate_site/img/google-play-badge.svg"
-                      alt=""
-                      className="app-store"
-                    />
-                  </a>
-                  <a href="https://itunes.apple.com/app/id1418361482">
-                    <img
-                      src="https://www.kingstudio.ro/demos/theone/images/app-store.png"
-                      alt=""
-                      className="app-store mx-auto"
-                    />
-                  </a>
-                </p>
-              </Col>
-            </Row>
-          </Jumbotron>
-          </div> */}
-
-          {/* Other Design */}
-
-          <Jumbotron className="display-4 dark-header">
+          <Jumbotron className="dark-header">
             <div className="container">
               <div className="header-content" />
               <div className="row">
                 <div className="col-sm-6 header-content-details">
                   <h3 className="pr-5 mr-5 pb-2 header-brand">
                     <span className="gold header-brand">RMate </span>
-                    
                     is your One-Stop-Shop for student success
                   </h3>
 
@@ -114,11 +71,52 @@ class HomePage extends Component {
                 </div>
               </div>
             </div>
-            </Jumbotron>
+          </Jumbotron>
         </div>
 
+        {/* Highlights Section */}
 
-        {/* How Section */}
+        <section id="highlights" className="pt-0">
+          <div className="container-fluid">
+            {/* <div className="page-header text-center">
+              <h2>Highlights</h2>
+            </div> */}
+            <div className="row">
+
+              <div className="col-md-3 bg-dark">
+                <div className="promo-box text-center inner-space-2x">
+                  <h6 className="text-white">Student Onboarding</h6>
+                  <p className="text-white">Student success starts by engaging and connecting with students on their terms.</p>
+                </div>
+              </div>
+
+              <div className="col-md-3 bg-light">
+                <div className="promo-box text-center inner-space-2x">
+                  <h6 className="text-white">Student Retention</h6>
+                  <p className="text-white">Among public institutions, only 64% of freshmen return for their sophomore year.</p>
+                </div>
+              </div>
+
+              <div className="col-md-3 bg-dark">
+                <div className="promo-box text-center inner-space-2x">
+                  <h6 className="text-white">Degree Completion</h6>
+                  <p className="text-white">Only 59% of undergraduate students at 4-year institutions graduate in 6 years.</p>
+                </div>
+              </div>
+
+              <div className="col-md-3 bg-light">
+                <div className="promo-box text-center inner-space-2x">
+                  <h6 className="text-white">Lifelong Relationships</h6>
+                  <p className="text-white">Universities yearn to build lifelong relationships beginning with prospective students through alumni</p>
+                </div>
+              </div>
+               
+
+            </div>
+          </div>
+        </section>
+
+        {/* Audience Section */}
 
         <section id="how" className="style-2">
           <div className="container">
@@ -132,7 +130,7 @@ class HomePage extends Component {
                     {/* <span className="step-badge rounded">1</span> */}
                     <i className="fa fa-sign-in rounded" />
                   </div>
-                  <h4>Incoming Students</h4>
+                  <h4 className>Incoming Students</h4>
                 </div>
               </div>
 
@@ -239,8 +237,8 @@ class HomePage extends Component {
                   </div>
                   <h5>School Clubs</h5>
                   <p>
-                    Always be up to date with all your school clubs! Never miss a
-                    club event again!
+                    Always be up to date with all your school clubs! Never miss
+                    a club event again!
                   </p>
                 </div>
 
@@ -259,106 +257,19 @@ class HomePage extends Component {
           </div>
         </section>
 
-        {/* <Container fluid className="bg-light">
-          <div className="container text-center">
-            <h1>The Team</h1>
-          </div>
-          <Row className="show-grid text-center">
-            <Col xs={12} sm={3}>
-              <img src={richard} className="rounded-circle" />
-              <h3>Richard Heng</h3>
-              <p className="lead">Lead Developer</p>
-            </Col>
-            <Col xs={12} sm={3}>
-              <img src={edward} className="rounded-circle" />
-              <h3>Edward Hernandez</h3>
-              <p className="lead">Design Director</p>
-            </Col>
-            <Col xs={12} sm={3}>
-              <img src={jorge} className="rounded-circle" />
-              <h3>Jorge Flores</h3>
-              <p className="lead">Database Director</p>
-            </Col>
-            <Col xs={12} sm={3}>
-              <img src={dylan} className="rounded-circle" />
-              <h3>Dylan O’Neill</h3>
-              <p className="lead">Product Engineer</p>
-            </Col>
-          </Row>
-        </Container> */}
+        {/* Quote Section */}
 
-        {/* <section id="cta" className="parallax dark-bg">
+        <section id="cta" className="parallax dark-bg">
           <div className="container">
             <div className="cta-content">
-              <h2 className="cta-title">Club Organizations</h2>
+              <h2 className="cta-title">This App is Awesome</h2>
               <p className="text-sm cta-description">
-                Are you a leader of a club organization? Send us a e-mail and we
-                will give you exclusive permission to access our in-app features
-                for your respective clubs!
+                “This is perfect for me. I am transferring to UCR in the fall...”- Joshua D.
               </p>
-              <p className="cta-info">Download the App Now from:</p>
+              {/* <p className="cta-info">Download the App Now from:</p> */}
             </div>
-          </div>
-        </section> */}
-
-        <section id="team">
-          <div className="container">
-            <div className="page-header text-center">
-              <h2>Development Team</h2>
-            </div>
-            <Row>
-              {/* <div className="row"> */}
-              <div className="col-sm-3">
-                <div className="team block text-center">
-                  <img src={richard} className="rounded-circle" />
-                  <h5>Richard Heng</h5>
-                  <p className="team-role">Lead Developer</p>
-                </div>
-              </div>
-
-              <div className="col-sm-3">
-                <div className="team block text-center">
-                  <img src={edward} className="rounded-circle" />
-                  <h5>Edward Hernandez</h5>
-                  <p className="team-role">Design Director</p>
-                </div>
-              </div>
-
-              <div className="col-sm-3">
-                <div className="team block text-center">
-                  <img src={jorge} className="rounded-circle" />
-                  <h5>Jorge Flores</h5>
-                  <p className="team-role">Database Director</p>
-                </div>
-              </div>
-
-              <div className="col-sm-3">
-                <div className="team block text-center">
-                  <img src={dylan} className="rounded-circle" />
-                  <h5>Dylan O’Neill</h5>
-                  <p className="team-role">Product Engineer</p>
-                </div>
-              </div>
-
-              {/* </div> */}
-            </Row>
           </div>
         </section>
-
-        {/* <Container fluid className="bg-dark text-center container">
-          <p>© 2018 CampusMate. All Rights Reserved.</p>
-          <ul className="list-inline">
-            <li className="list-inline-item">
-              <a href="#">Privacy</a>
-            </li>
-            <li className="list-inline-item">
-              <a href="#">Terms</a>
-            </li>
-            <li className="list-inline-item">
-              <a href="#">FAQ</a>
-            </li>
-          </ul>
-        </Container> */}
 
         {/* //Club organization, email us */}
         <section id="newsletter" className="club">
@@ -383,13 +294,6 @@ class HomePage extends Component {
                   <i className="fa fa-sign-in pr-2" />
                   <span>Request</span>
                 </Button>{" "}
-                {/* <button
-                  className="btn btn-md btn-primary-filled btn-left btn-newsletter btn-rounded"
-                  type="button"
-                >
-                  <i className="fa fa-sign-in" />
-                  <span>Subscribe</span>
-                </button> */}
               </span>
             </div>
           </div>
