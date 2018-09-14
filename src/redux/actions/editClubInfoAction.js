@@ -3,8 +3,9 @@ import {EDIT_CLUB,ERROR_EVENTS} from './types';
 export const editClubInfo = (object_data) => {
     return function(dispatch)
     {
-        return fetch("https://cors-anywhere.herokuapp.com/https://www.mycampusmate.com/api/organizations/" + object_data.url + "/edit_club", {
+        return fetch("https://rmate-backend.herokuapp.com/api/organizations/" + object_data.url + "/edit_club", {
             method: "POST",
+            credentials: "include",
             headers: {
               Accept: "application/json",
               "Content-Type": "application/json"
@@ -26,6 +27,7 @@ export const editClubInfo = (object_data) => {
                dispatch(editClub('Success'))
             }
             else{
+               alert(responseJson.status)
                dispatch(errorClub('Error occurred when adding events'))
             }
           })

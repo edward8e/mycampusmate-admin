@@ -4,8 +4,9 @@ export const checkAuth = (user_email,user_password) => {
     return function(dispatch)
     {
         dispatch(fetching('True'));
-           return fetch("https://cors-anywhere.herokuapp.com/https://www.mycampusmate.com/api/login", {
+           return fetch("https://rmate-backend.herokuapp.com/api/login", {
             method: "POST",
+            credentials: "include",
             headers: {
               Accept: "application/json",
               "Content-Type": "application/json"
@@ -18,6 +19,7 @@ export const checkAuth = (user_email,user_password) => {
           }).then(response => response.json().then( responseJson => {
               if (responseJson.status === "OK") {
                  dispatch(fetch_success('Success'));
+                 console.log(responseJson.status)
               } else if (responseJson.status === "Please confirm your email") {
                 //alert("Confirm email"); 
                  dispatch(fetch_error('Confirm email'));
@@ -35,8 +37,9 @@ export const checkAuth = (user_email,user_password) => {
 export const ForgotPassword_action = (user_email) => {
     return function(dispatch)
     {
-        return fetch("https://cors-anywhere.herokuapp.com/https://www.mycampusmate.com/api/user/reset-password", {
+        return fetch("https://rmate-backend.herokuapp.com/api/user/reset-password", {
             method: "POST",
+            credentials: "include",
             headers: {
               Accept: "application/json",
               "Content-Type": "application/json"

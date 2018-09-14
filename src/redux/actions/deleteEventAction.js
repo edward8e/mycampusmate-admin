@@ -3,8 +3,9 @@ import {DELETED_EVENT,ERROR_EVENTS} from './types';
 export const deleteClubEvent = (_url,id) => {
     return function(dispatch)
     {
-        return fetch("https://cors-anywhere.herokuapp.com/https://www.mycampusmate.com/api/organizations/"+ _url +"/remove-event/"+id, {
+        return fetch("https://rmate-backend.herokuapp.com/api/organizations/"+ _url +"/remove-event/"+id, {
             method: "POST",
+            credentials: "include",
             headers: {
               Accept: "application/json",
               "Content-Type": "application/json"

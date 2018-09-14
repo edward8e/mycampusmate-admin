@@ -51,7 +51,7 @@ class DeleteClubs extends Component {
     var i = "1";
     for (i = "1"; i < "35"; i++) {
       fetch(
-        "https://cors-anywhere.herokuapp.com/https://www.mycampusmate.com/api/organizations?page=" +
+        "https://rmate-backend.herokuapp.com/api/organizations?page=" +
           i
       )
         .then(res => res.json())
@@ -92,7 +92,7 @@ class DeleteClubs extends Component {
       this.setState({ clubUrl: club });
       console.log(`Option selected:`, club._url);
       fetch(
-        "https://cors-anywhere.herokuapp.com/https://www.mycampusmate.com/api/organizations/" +
+        "https://rmate-backend.herokuapp.com/api/organizations/" +
           club._url
       )
         .then(res => res.json())
