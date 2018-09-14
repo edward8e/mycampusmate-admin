@@ -11,11 +11,12 @@ import Dashboard from '../../views/Dashboard/';
 import Clubs from '../../views/Clubs/Main/Clubs';
 import AddClubs from '../../views/Clubs/AddClubs/AddClubs';
 import DeleteClubs from '../../views/Clubs/DeleteClubs/DeleteClubs';
-import EditClubs from '../../views/Clubs/EditClubs/EditClubs';
+import EditEvent from '../../views/Clubs/EditEvent/EditEvent';
 import ContactUs from '../../views/ContactUs/';
 import Login from '../../views/Login/Login';
 import Register from '../../views/Register/Register';
 import ForgotPassword from '../../views/ForgotPassword/ForgotPassword';
+import EditClubInfo from '../../views/Clubs/EditClubInfo/EditClubInfo';
 import {Provider} from 'react-redux';
 //import rootReducer from '../../redux/reducers';
 
@@ -26,11 +27,13 @@ import addEventReducer from '../../redux/reducers/addEventReducer';
 import deleteEventReducer from '../../redux/reducers/deleteEventReducer';
 import AboutPage from '../../components/AboutPage';
 import editEventReducer from '../../redux/reducers/editEventReducer';
+import editClubReducer from '../../redux/reducers/editClubReducer';
 const allReducers = combineReducers({
   auth: authReducer,
   addEvent: addEventReducer,
   deleteEvent_ID: deleteEventReducer,
-  editClubs: editEventReducer,
+  editEvent: editEventReducer,
+  editClub: editClubReducer
 });
 const store = createStore(allReducers,{},compose(applyMiddleware(ReduxThunk)));
 
@@ -47,12 +50,13 @@ class Full extends Component {
             <Container fluid>
               <Switch>
                 <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
-                <Route path="/home" name="home" component={Dashboard}/>
+                <Route path="/home" name="home" component={Login}/>
                 <Route path="/clubs" name="Clubs" component={Clubs}/>
                 <Route path="/addclubs" name="AddClubs" component={AddClubs}/>
                 <Route path="/deleteclubs" name="DeleteClubs" component={DeleteClubs}/>
-                <Route path="/editclubs" name="EditClubs" component={EditClubs}/>
+                <Route path="/editevent" name="EditEvent" component={EditEvent}/>
                 <Route path="/register" name="Register" component={Register}/>
+                <Route path="/editclubinfo" name="EditClubInfo" component={EditClubInfo}/>
                 <Route path="/login" name="Login" component={Login}/>
                 <Route path="/forgotpassword" name="ForgotPassword" component={ForgotPassword}/>
                 <Route path="/contactus" name="ContactUs" component={ContactUs}/>

@@ -3,8 +3,9 @@ import {ADDED_EVENTS,ERROR_EVENTS} from './types';
 export const addClubEvent = (object_data) => {
     return function(dispatch)
     {
-        return fetch("https://cors-anywhere.herokuapp.com/https://www.mycampusmate.com/api/organizations/" + object_data.club_name + "/add-event", {
+        return fetch("https://rmate-backend.herokuapp.com/api/organizations/" + object_data.club_name + "/add-event", {
             method: "POST",
+            credentials: "include",
             headers: {
               Accept: "application/json",
               "Content-Type": "application/json"

@@ -34,7 +34,7 @@ import {
   editEventError
 } from "../../../redux/actions/editEventActions";
 
-class EditClubs extends Component {
+class EditEvent extends Component {
   constructor(props) {
     super(props);
     this.handleStartDayClick = this.handleStartDayClick.bind(this);
@@ -104,7 +104,7 @@ class EditClubs extends Component {
     var i = "1";
     for (i = "1"; i < "35"; i++) {
       fetch(
-        "https://cors-anywhere.herokuapp.com/https://www.mycampusmate.com/api/organizations?page=" +
+        "https://rmate-backend.herokuapp.com/api/organizations?page=" +
           i
       )
         .then(res => res.json())
@@ -148,7 +148,7 @@ class EditClubs extends Component {
       this.setState({ clubUrl: club });
       console.log(`Option selected:`, club._url);
       fetch(
-        "https://cors-anywhere.herokuapp.com/https://www.mycampusmate.com/api/organizations/" +
+        "https://rmate-backend.herokuapp.com/api/organizations/" +
           club._url +
           "/events"
       )
@@ -365,15 +365,15 @@ class EditClubs extends Component {
   }
 }
 
-const mapStateToProps = ({ editClubs }) => {
+const mapStateToProps = ({ editEvent }) => {
   return {
-    editSuccess: editClubs.editSuccess,
-    errorEdit: editClubs.errorEdit
+    editSuccess: editEvent.editSuccess,
+    errorEdit: editEvent.errorEdit
   };
 };
 export default withRouter(
   connect(
     mapStateToProps,
     { fetchEditAPI, editEventSuccess, editEventError }
-  )(EditClubs)
+  )(EditEvent)
 );

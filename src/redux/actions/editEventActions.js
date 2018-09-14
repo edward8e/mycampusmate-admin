@@ -3,8 +3,9 @@ import {EDIT_EVENT,ERROR_EDITING} from './types';
 export const fetchEditAPI = (editObject) => {
     return function(dispatch)
     {
-        return fetch("https://cors-anywhere.herokuapp.com/https://www.mycampusmate.com/api/events/"+editObject.id+"/edit_event", {
+        return fetch("https://rmate-backend.herokuapp.com/api/events/"+editObject.id+"/edit_event", {
             method: "POST",
+            credentials: "include",
             headers: {
               Accept: "application/json",
               "Content-Type": "application/json"
