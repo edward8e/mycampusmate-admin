@@ -42,19 +42,6 @@ export default class NavBar extends Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              {/* <NavItem>
-                <NavLink active tag={Link} to="/">
-                  Home
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink tag={Link} to="/about">
-                  About Us
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="">Contact Us</NavLink>
-              </NavItem> */}
               <NavItem>
                 <NavLink active tag={Link} to="/">
                   Home
@@ -66,10 +53,15 @@ export default class NavBar extends Component {
                 </NavLink>
               </NavItem>
               <NavItem>
+                <NavLink active tag={Link} to="/contact">
+                  Contact
+                </NavLink>
+              </NavItem>
+              {/* <NavItem>
                 <NavLink active tag={Link} to="/login">
                   Login
                 </NavLink>
-              </NavItem>
+              </NavItem> */}
             </Nav>
           </Collapse>
         </Navbar>

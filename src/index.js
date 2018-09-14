@@ -24,12 +24,15 @@ import '../scss/core/_dropdown-menu-right.scss'
 import Full from './containers/Full/'
 import HomePage from '../src/components/HomePage';
 import AboutPage from '../src/components/AboutPage';
+import ContactPage from '../src/components/ContactPage'
 
 ReactDOM.render((
   <HashRouter>
     <Switch>
       <Route path="/about" name="Home" component={AboutPage}/>
+      <Route path="/contact" name="Home" component={ContactPage}/>
       <Route path="/" name="Home" component={HomePage}/>
+
     </Switch>
   </HashRouter>
 ), document.getElementById('root'));

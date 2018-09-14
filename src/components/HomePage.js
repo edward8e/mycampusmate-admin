@@ -85,28 +85,28 @@ class HomePage extends Component {
 
               <div className="col-md-3 bg-dark">
                 <div className="promo-box text-center inner-space-2x">
-                  <h6 className="text-white">Student Onboarding</h6>
+                  <h5 className="text-white">Student Onboarding</h5>
                   <p className="text-white">Student success starts by engaging and connecting with students on their terms.</p>
                 </div>
               </div>
 
               <div className="col-md-3 bg-light">
                 <div className="promo-box text-center inner-space-2x">
-                  <h6 className="text-white">Student Retention</h6>
+                  <h5 className="text-white">Student Retention</h5>
                   <p className="text-white">Among public institutions, only 64% of freshmen return for their sophomore year.</p>
                 </div>
               </div>
 
               <div className="col-md-3 bg-dark">
                 <div className="promo-box text-center inner-space-2x">
-                  <h6 className="text-white">Degree Completion</h6>
+                  <h5 className="text-white">Degree Completion</h5>
                   <p className="text-white">Only 59% of undergraduate students at 4-year institutions graduate in 6 years.</p>
                 </div>
               </div>
 
               <div className="col-md-3 bg-light">
                 <div className="promo-box text-center inner-space-2x">
-                  <h6 className="text-white">Lifelong Relationships</h6>
+                  <h5 className="text-white">Lifelong Relationships</h5>
                   <p className="text-white">Universities yearn to build lifelong relationships beginning with prospective students through alumni</p>
                 </div>
               </div>
@@ -130,7 +130,7 @@ class HomePage extends Component {
                     {/* <span className="step-badge rounded">1</span> */}
                     <i className="fa fa-sign-in rounded" />
                   </div>
-                  <h4 className>Incoming Students</h4>
+                  <h4 className="text-center">Incoming Students</h4>
                 </div>
               </div>
 
@@ -163,6 +163,20 @@ class HomePage extends Component {
                   <h4>International Students</h4>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Quote Section */}
+
+        <section id="cta" className="parallax dark-bg">
+          <div className="container">
+            <div className="cta-content">
+              <h2 className="cta-title text-white">This App is Awesome</h2>
+              <p className="text-sm cta-description text-white">
+                “This is perfect for me. I am transferring to UCR in the fall...”- Joshua D.
+              </p>
+              {/* <p className="cta-info">Download the App Now from:</p> */}
             </div>
           </div>
         </section>
@@ -257,19 +271,7 @@ class HomePage extends Component {
           </div>
         </section>
 
-        {/* Quote Section */}
-
-        <section id="cta" className="parallax dark-bg">
-          <div className="container">
-            <div className="cta-content">
-              <h2 className="cta-title">This App is Awesome</h2>
-              <p className="text-sm cta-description">
-                “This is perfect for me. I am transferring to UCR in the fall...”- Joshua D.
-              </p>
-              {/* <p className="cta-info">Download the App Now from:</p> */}
-            </div>
-          </div>
-        </section>
+     
 
         {/* //Club organization, email us */}
         <section id="newsletter" className="club">
