@@ -1,5 +1,9 @@
 /* change the background color */
 .bg-ucrBlue {
-    background-color: #0D2D5C !important;
+    background-color: #2d6cc0 !important;
+}
+
+a:hover { 
+    color: #F1AB00 !important;
 }
   
