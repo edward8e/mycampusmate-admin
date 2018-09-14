@@ -3,7 +3,7 @@ import {EDIT_CLUB,ERROR_EVENTS} from './types';
 export const editClubInfo = (object_data) => {
     return function(dispatch)
     {
-        return fetch("https://rmate-backend.herokuapp.com/api/organizations/" + object_data.url + "/edit_club", {
+        return fetch("https://rmate-backend.herokuapp.com/api/organizations/" + object_data.url + "/edit-club", {
             method: "POST",
             credentials: "include",
             headers: {
