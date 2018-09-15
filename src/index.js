@@ -25,12 +25,12 @@ import AboutPage from "../src/components/AboutPage";
 import ContactPage from "../src/components/ContactPage";
 
 ReactDOM.render(
-  <BrowserRouter>
+  <HashRouter>
     <Switch>
       <Route path="/about" name="Home" component={AboutPage} />
       <Route path="/contact" name="Home" component={ContactPage} />
       <Route path="/" name="Home" component={HomePage} />
     </Switch>
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById("root")
 );

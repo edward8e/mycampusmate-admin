@@ -19,10 +19,6 @@
   height: 491px;
 }
 
-.team-bg {
-  background: #f86c6b;
-}
-
 .jumbotron {
   background-image: url("https://i.imgur.com/52N95gE.jpg") !important;
   background-size: cover;
@@ -281,46 +277,6 @@
   }
 }
 
-/* Team */
-
-#team {
-  background-image: none;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-color: #f7f7f7;
-  padding: 80px 0;
-}
-
-.team {
-  margin-top: 30px;
-  img {
-    border-radius: 50%;
-    max-width: 150px;
-  }
-}
-
-#team.style-2 .team img {
-  border-radius: 0;
-}
-
-.team-role {
-  font-size: 14px;
-  margin-bottom: 15px;
-}
-
-.team .social i {
-  color: #cccccc;
-  -webkit-transition: ease-in 0.2s;
-  -moz-transition: ease-in 0.2s;
-  -o-transition: ease-in 0.2s;
-  transition: ease-in 0.2s;
-  &:hover {
-    color: #1fc585;
-  }
-}
-
-/* End Team */
 
 /* Footers */
 

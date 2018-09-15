@@ -17,48 +17,55 @@ import "./AboutPage.scss";
 class AboutPage extends Component {
   render() {
     return (
-      <div>
+      <div className="light-bg">
         <NavBar />
         <Container className="pt-5 pb-5">
-          <Jumbotron>
-            <h2>Welcome to CodeLife</h2>
-            <p>
-              This is how to build a website with React, React-Router &
-              React-Bootstrap
-            </p>
-            <Link to="/about">
-              <Button className="btn-primary">Learn More</Button>
-            </Link>
-          </Jumbotron>
-          <div className="page-header text-center">
-              <h2>The Team</h2>
-          </div>
+          <section id="team-header" className="parallax page-header">
+            <div className="container">
+              <Row>
+                <div className="team-headline">
+                  <h2>Meet The MyCampusMate Team</h2>
+                  <p>
+                    MyCampusMate started from a group of students that competed
+                    in UCR Cutie Hackathon competition. We decided to pursue our
+                    app idea and try to make this into a real product and
+                    company. With the guidance from a Professor at UCR we were
+                    are able to move forward and gain exposure from the school.
+                    Our goal is to make a app that can help all students who
+                    attend univeristies by making their school experience less
+                    stressful and easier.
+                  </p>
+                </div>
+              </Row>
+            </div>
+          </section>
+
           <Row className="show-grid text-center">
             <Col xs={12} sm={4} className="team">
               <img src={richard} className="rounded-circle" />
-              <h3>Richard Heng</h3>
+              <h3 className="pt-1 mt-1">Richard Heng</h3>
               <p>Lead Developer</p>
             </Col>
             <Col xs={12} sm={4} className="team">
               <img src={edward} className="rounded-circle" />
-              <h3>Edward Hernandez</h3>
+              <h3 className="pt-1 mt-1">Edward Hernandez</h3>
               <p>Design Director</p>
             </Col>
             <Col xs={12} sm={4} className="team">
               <img src={jorge} className="rounded-circle" />
-              <h3>Jorge Flores</h3>
+              <h3 className="pt-1 mt-1">Jorge Flores</h3>
               <p>Database Director</p>
             </Col>
           </Row>
           <Row className="show-grid text-center">
             <Col xs={12} sm={4} className="team">
               <img src={dylan} className="rounded-circle" />
-              <h3>Dylan O’Neill</h3>
+              <h3 className="pt-1 mt-1">Dylan O’Neill</h3>
               <p>Product Engineer</p>
             </Col>
             <Col xs={12} sm={4} className="team">
               <img src={michalis} className="rounded-circle" />
-              <h3>Michalis Faloutsos</h3>
+              <h3 className="pt-1 mt-1">Michalis Faloutsos</h3>
               <p>Professor at UCR and President of Programize LLC</p>
             </Col>
           </Row>

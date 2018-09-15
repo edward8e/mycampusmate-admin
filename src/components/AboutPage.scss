@@ -1,68 +1,50 @@
 .jumbotron {
-  background-image: url('../assets/logo/ucr_highlander.jpg') !important;
+  background-image: url("../assets/logo/ucr_highlander.jpg") !important;
   background-size: cover;
   background-repeat: no-repeat;
   padding: 2rem 1rem;
   // margin-bottom: 2rem;
   background-color: #e4e7ea;
-  // border-radius: 0.3rem; 
+  // border-radius: 0.3rem;
 }
-  .person-wrapper {
-    margin-bottom: 2em;
-  }
-  
-  .profile-pic {
-    width: 50%;
-  }
-  
-  .btn-primary {
-    background-image: none;
-    border: none;
-    border-radius: 0;
-    background-color: #2892D7;
-  }
+.person-wrapper {
+  margin-bottom: 2em;
+}
 
-  .page-header {
-    font-size: 30px;
-    font-weight: 700;
-    border: none;
-    margin-top: 0;
-    margin-bottom: 30px;
+.profile-pic {
+  width: 50%;
+}
+
+.btn-primary {
+  background-image: none;
+  border: none;
+  border-radius: 0;
+  background-color: #2892d7;
+}
+
+.page-header {
+  font-size: 30px;
+  font-weight: 700;
+  border: none;
+  margin-top: 0;
+  margin-bottom: 30px;
+  h2 {
+    margin-bottom: 8px;
+  }
+  &.wsub {
+    margin-bottom: 0;
     h2 {
-      margin-bottom: 8px;
-    }
-    &.wsub {
       margin-bottom: 0;
-      h2 {
-        margin-bottom: 0;
-      }
     }
   }
-  
-  h3 {
-    margin-bottom: 1em;
-  }
+}
 
-  #team {
-    background-image: none;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-color: #f7f7f7;
-    padding: 80px 0;
-  }
-  
-  .team {
-    margin-top: 30px;
-    img {
-      border-radius: 50%;
-      max-width: 350px;
-      width: 50%;
-    }
-  }
+h3 {
+  margin-bottom: 1em;
+}
 
-  /* Footers */
-  
+/* Footers */
+
 .footer-info {
   padding: 25px 15px;
 }
@@ -94,7 +76,7 @@ footer {
 }
 
 .color-footer {
-  background: #0D2D5C;
+  background: #0d2d5c;
   p {
     color: white;
   }
@@ -105,11 +87,58 @@ footer {
     }
   }
   p a {
-    color: #F1AB00;
+    color: #f1ab00;
     &:hover {
-      color: #BB8900;
+      color: #bb8900;
     }
   }
 }
 
 /* End Footers */
+
+.dark-bg {
+  background-color: #272733;
+}
+
+.light-bg {
+  background-color: #ffffff;
+}
+
+.style-2 {
+  top: -25px;
+  left: -10px;
+  border-radius: 0;
+  top: -25px;
+  left: -10px;
+}
+
+//team
+
+.team-headline {
+  text-align: center;
+}
+
+#team-header {
+  //background-image: url('../assets/logo/ucr_highlander.jpg') !important;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #f7f7f7;
+  padding: 40px 0;
+}
+
+.team {
+  margin-top: 30px;
+  img {
+    border-radius: 50%;
+    max-width: 350px;
+    width: 60%;
+  }
+}
+
+.team-headline p {
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
