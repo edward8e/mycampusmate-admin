@@ -1,9 +1,10 @@
 import {EDIT_CLUB,ERROR_EVENTS} from './types';
+import API from '../../api';
 
 export const editClubInfo = (object_data) => {
     return function(dispatch)
     {
-        return fetch("https://rmate-backend.herokuapp.com/api/organizations/" + object_data.url + "/edit-club", {
+        return fetch(API.ROOT_URL + "organizations/" + object_data.url + "/edit-club", {
             method: "POST",
             credentials: "include",
             headers: {

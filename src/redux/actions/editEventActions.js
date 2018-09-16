@@ -1,9 +1,10 @@
 import {EDIT_EVENT,ERROR_EDITING} from './types';
+import API from '../../api';
 
 export const fetchEditAPI = (editObject) => {
     return function(dispatch)
     {
-        return fetch("https://rmate-backend.herokuapp.com/api/events/"+editObject.id+"/edit_event", {
+        return fetch(API.ROOT_URL + "events/"+editObject.id+"/edit_event", {
             method: "POST",
             credentials: "include",
             headers: {

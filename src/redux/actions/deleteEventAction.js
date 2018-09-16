@@ -1,9 +1,10 @@
 import {DELETED_EVENT,ERROR_EVENTS} from './types';
+import API from '../../api';
 
 export const deleteClubEvent = (_url,id) => {
     return function(dispatch)
     {
-        return fetch("https://rmate-backend.herokuapp.com/api/organizations/"+ _url +"/remove-event/"+id, {
+        return fetch(API.ROOT_URL + "organizations/"+ _url +"/remove-event/"+id, {
             method: "POST",
             credentials: "include",
             headers: {

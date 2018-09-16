@@ -33,6 +33,7 @@ import {
   editEventSuccess,
   editEventError
 } from "../../../redux/actions/editEventActions";
+import API from '../../../api';
 
 class EditEvent extends Component {
   constructor(props) {
@@ -104,7 +105,7 @@ class EditEvent extends Component {
     var i = "1";
     for (i = "1"; i < "35"; i++) {
       fetch(
-        "https://rmate-backend.herokuapp.com/api/organizations?page=" +
+        API.ROOT_URL + "organizations?page=" +
           i
       )
         .then(res => res.json())
@@ -148,7 +149,7 @@ class EditEvent extends Component {
       this.setState({ clubUrl: club });
       console.log(`Option selected:`, club._url);
       fetch(
-        "https://rmate-backend.herokuapp.com/api/organizations/" +
+        API.ROOT_URL + "organizations/" +
           club._url +
           "/events"
       )

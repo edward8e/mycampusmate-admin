@@ -1,9 +1,11 @@
 import {ADDED_EVENTS,ERROR_EVENTS} from './types';
+import API from '../../api';
 
 export const addClubEvent = (object_data) => {
     return function(dispatch)
     {
-        return fetch("https://rmate-backend.herokuapp.com/api/organizations/" + object_data.club_name + "/add-event", {
+         return fetch(API.ROOT_URL + "organizations/" + object_data.club_name + "/add-event", {
+
             method: "POST",
             credentials: "include",
             headers: {

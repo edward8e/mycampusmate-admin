@@ -16,6 +16,7 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import Select from "react-select";
 import "react-select/dist/react-select.css";
+import API from '../../../api';
 
 import {editClubInfo,editClub} from '../../../redux/actions/editClubInfoAction';
 class EditClubInfo extends Component {
@@ -78,7 +79,7 @@ class EditClubInfo extends Component {
     var i = "1";
     for (i = "1"; i < "35"; i++) {
       fetch(
-        "https://rmate-backend.herokuapp.com/api/organizations?page=" +
+        API.ROOT_URL + "organizations?page=" +
           i
       )
         .then(res => res.json())

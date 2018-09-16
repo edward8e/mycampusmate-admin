@@ -16,6 +16,7 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { addClubEvent } from "../../../redux/actions/addEventActions";
 import { addedEvents } from "../../../redux/actions/addEventActions";
+import API from '../../../api';
 
 import DatePicker from "react-datepicker";
 import DayPicker from "react-day-picker";
@@ -83,10 +84,7 @@ class AddClubs extends Component {
   componentDidMount() {
     var i = "1";
     for (i = "1"; i < "35"; i++) {
-      fetch(
-        "https://rmate-backend.herokuapp.com/api/organizations?page=" +
-          i
-      )
+      fetch(API.ROOT_URL + "organizations?page=" + i)
         .then(res => res.json())
         .then(res => {
           for (var j = "0"; j < "15"; j++) {

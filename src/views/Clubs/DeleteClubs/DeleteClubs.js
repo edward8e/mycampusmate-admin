@@ -19,6 +19,7 @@ import {
   deletedEvent
 } from "../../../redux/actions/deleteEventAction";
 import Select from "react-select";
+import API from "../../../api";
 import "react-select/dist/react-select.css";
 class DeleteClubs extends Component {
   constructor(props) {
@@ -50,10 +51,7 @@ class DeleteClubs extends Component {
   componentDidMount() {
     var i = "1";
     for (i = "1"; i < "35"; i++) {
-      fetch(
-        "https://rmate-backend.herokuapp.com/api/organizations?page=" +
-          i
-      )
+      fetch(API.ROOT_URL + "organizations?page=" + i)
         .then(res => res.json())
         .then(res => {
           for (var j = "0"; j < "15"; j++) {
@@ -91,10 +89,7 @@ class DeleteClubs extends Component {
     if (club != null) {
       this.setState({ clubUrl: club });
       console.log(`Option selected:`, club._url);
-      fetch(
-        "https://rmate-backend.herokuapp.com/api/organizations/" +
-          club._url
-      )
+      fetch(API.ROOT_URL + "organizations/" + club._url)
         .then(res => res.json())
         .then(res => {
           for (var i = 0; i < res.events.length; i++) {

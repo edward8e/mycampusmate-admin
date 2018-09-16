@@ -1,10 +1,11 @@
 import {FETCHING,FETCH_SUCCESS,FETCH_FAIL,AUTH_CHECKER,FORGOT_PASSWORD} from './types';
+import API from '../../api';
 
 export const checkAuth = (user_email,user_password) => {
     return function(dispatch)
     {
         dispatch(fetching('True'));
-           return fetch("https://rmate-backend.herokuapp.com/api/login", {
+           return fetch(API.ROOT_URL + "login", {
             method: "POST",
             credentials: "include",
             headers: {
@@ -37,7 +38,7 @@ export const checkAuth = (user_email,user_password) => {
 export const ForgotPassword_action = (user_email) => {
     return function(dispatch)
     {
-        return fetch("https://rmate-backend.herokuapp.com/api/user/reset-password", {
+        return fetch(API.ROOT_URL + "user/reset-password", {
             method: "POST",
             credentials: "include",
             headers: {
