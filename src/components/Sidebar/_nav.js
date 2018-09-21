@@ -33,6 +33,23 @@ export default {
       ]
     },
     {
+      name: 'Officers',
+      url: '/officers',
+      icon: 'icon-puzzle',
+      children: [
+        {
+          name: 'Add an officer',
+          url: '/addofficer',
+          icon: 'fa fa-plus-circle'
+        },
+        {
+          name: 'Delete an officer',
+          url: '/deleteofficer',
+          icon: 'fa fa-minus-circle'
+        }
+      ]
+    },
+    {
       divider: true,
     },
     {

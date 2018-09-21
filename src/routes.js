@@ -7,6 +7,8 @@ const routes = {
   '/editevent': 'EditEvent',
   '/editclubinfo' : 'EditClubInfo',
   '/contactus': 'Contact Us',
+  '/addofficer' : 'Add an officer',
+  '/deleteofficer': 'Delete an officer',
   '/register':'Register',
   '/login': 'Login',
   '/': '',

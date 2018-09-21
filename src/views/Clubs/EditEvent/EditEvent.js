@@ -9,7 +9,9 @@ import {
   Button,
   Input,
   InputGroup,
-  InputGroupAddon
+  InputGroupAddon,
+  FormGroup,
+  Label
 } from "reactstrap";
 import { Link, Switch, Route, Redirect } from "react-router-dom";
 import { withRouter } from "react-router-dom";
@@ -33,7 +35,7 @@ import {
   editEventSuccess,
   editEventError
 } from "../../../redux/actions/editEventActions";
-import API from '../../../api';
+import API from "../../../api";
 
 class EditEvent extends Component {
   constructor(props) {
@@ -104,10 +106,7 @@ class EditEvent extends Component {
   componentDidMount() {
     var i = "1";
     for (i = "1"; i < "35"; i++) {
-      fetch(
-        API.ROOT_URL + "organizations?page=" +
-          i
-      )
+      fetch(API.ROOT_URL + "organizations?page=" + i)
         .then(res => res.json())
         .then(res => {
           for (var j = "0"; j < "15"; j++) {
@@ -148,11 +147,7 @@ class EditEvent extends Component {
     if (club != null) {
       this.setState({ clubUrl: club });
       console.log(`Option selected:`, club._url);
-      fetch(
-        API.ROOT_URL + "organizations/" +
-          club._url +
-          "/events"
-      )
+      fetch(API.ROOT_URL + "organizations/" + club._url + "/events")
         .then(res => res.json())
         .then(res => {
           if (res.length == 0) {
@@ -233,20 +228,18 @@ class EditEvent extends Component {
                                   onChange={this.updateInput.bind(this)}
                                 />
                               </InputGroup>
-                              <InputGroup className="mb-3">
-                                <div className="input-group-prepend">
-                                  <span className="input-group-text">
-                                    <i className="icon-user" />
-                                  </span>
-                                </div>
+
+                              <FormGroup>
+                                <Label for="contact-message">Description</Label>
                                 <Input
-                                  type="text"
-                                  placeholder="description"
+                                  type="textarea"
                                   name="description"
+                                  id="contact-message"
                                   value={this.state.description}
                                   onChange={this.updateInput.bind(this)}
                                 />
-                              </InputGroup>
+                              </FormGroup>
+
                               <InputGroup className="mb-3">
                                 <div className="input-group-prepend">
                                   <span className="input-group-text">

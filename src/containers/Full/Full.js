@@ -17,6 +17,9 @@ import Login from '../../views/Login/Login';
 import Register from '../../views/Register/Register';
 import ForgotPassword from '../../views/ForgotPassword/ForgotPassword';
 import EditClubInfo from '../../views/Clubs/EditClubInfo/EditClubInfo';
+import DeleteOfficer from '../../views/Officer/DeleteOfficer/DeleteOfficer';
+import AddOfficer from '../../views/Officer/AddOfficer/AddOfficer';
+
 import {Provider} from 'react-redux';
 //import rootReducer from '../../redux/reducers';
 
@@ -50,7 +53,7 @@ class Full extends Component {
             <Container fluid>
               <Switch>
                 <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
-                <Route path="/home" name="home" component={Login}/>
+                <Route path="/home" name="home" component={Dashboard}/>
                 <Route path="/clubs" name="Clubs" component={Clubs}/>
                 <Route path="/addclubs" name="AddClubs" component={AddClubs}/>
                 <Route path="/deleteclubs" name="DeleteClubs" component={DeleteClubs}/>
@@ -59,6 +62,8 @@ class Full extends Component {
                 <Route path="/editclubinfo" name="EditClubInfo" component={EditClubInfo}/>
                 <Route path="/login" name="Login" component={Login}/>
                 <Route path="/forgotpassword" name="ForgotPassword" component={ForgotPassword}/>
+                <Route path="/addofficer" name="AddOfficer" component={AddOfficer}/> 
+                <Route path="/deleteofficer" name="DeleteOfficer" component={DeleteOfficer}/>
                 <Route path="/contactus" name="ContactUs" component={ContactUs}/>
               </Switch>
             </Container>

@@ -9,7 +9,9 @@ import {
   Button,
   Input,
   InputGroup,
-  InputGroupAddon
+  InputGroupAddon,
+  FormGroup,
+  Label
 } from "reactstrap";
 import { Link, Switch, Route, Redirect } from "react-router-dom";
 import { withRouter } from "react-router-dom";
@@ -51,7 +53,7 @@ class AddClubs extends Component {
       end_time: "",
       test: "",
       name: "",
-      description: "",
+      description: [],
       dayoftheweek: "",
       starttime: "",
       endtime: "",
@@ -61,7 +63,7 @@ class AddClubs extends Component {
       Object1: {
         club_name: "",
         name: "",
-        description: "",
+        description: [],
         dayoftheweek: "",
         starttime: "",
         endtime: "",
@@ -130,6 +132,7 @@ class AddClubs extends Component {
   }
 
   updateInput(event) {
+
     this.setState({ [event.target.name]: event.target.value });
     this.setState({
       Object1: {
@@ -139,7 +142,7 @@ class AddClubs extends Component {
     });
   }
   add() {
-    console.log(this.state.Object1);
+    //console.log(this.state.Object1);
     this.props.addClubEvent(this.state.Object1);
   }
   handleChange(club) {
@@ -189,20 +192,17 @@ class AddClubs extends Component {
                         onChange={this.updateInput.bind(this)}
                       />
                     </InputGroup>
-                    <InputGroup className="mb-3">
-                      <div className="input-group-prepend">
-                        <span className="input-group-text">
-                          <i className="icon-user" />
-                        </span>
-                      </div>
-                      <Input
-                        type="text"
-                        placeholder="description"
-                        name="description"
-                        value={this.state.description}
-                        onChange={this.updateInput.bind(this)}
-                      />
-                    </InputGroup>
+                   
+                    <FormGroup>
+                    <Label for="contact-message">Description</Label>
+                    <Input
+                      type="textarea"
+                      name="description"
+                      id="contact-message"
+                      value={this.state.description}
+                      onChange={this.updateInput.bind(this)}
+                    />
+                  </FormGroup>
                     <InputGroup className="mb-3">
                       <div className="input-group-prepend">
                         <span className="input-group-text">

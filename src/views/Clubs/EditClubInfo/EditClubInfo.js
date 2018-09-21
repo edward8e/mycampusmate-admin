@@ -9,16 +9,21 @@ import {
   Button,
   Input,
   InputGroup,
-  InputGroupAddon
+  InputGroupAddon,
+  FormGroup,
+  Label
 } from "reactstrap";
 import { Link, Switch, Route, Redirect } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import Select from "react-select";
 import "react-select/dist/react-select.css";
-import API from '../../../api';
+import API from "../../../api";
 
-import {editClubInfo,editClub} from '../../../redux/actions/editClubInfoAction';
+import {
+  editClubInfo,
+  editClub
+} from "../../../redux/actions/editClubInfoAction";
 class EditClubInfo extends Component {
   constructor(props) {
     super(props);
@@ -26,10 +31,10 @@ class EditClubInfo extends Component {
     this.editClubInfo = this.editClubInfo.bind(this);
 
     this.state = {
-      club_url : "",
+      club_url: "",
       selectedOption: null,
       clubName: null,
-      allEventsName: [], 
+      allEventsName: [],
       name: "",
       description: [],
       additional_info: [],
@@ -38,7 +43,7 @@ class EditClubInfo extends Component {
       icon_src: "",
       photo_album: "",
       social_urls: [],
-      phone_number:"",
+      phone_number: "",
       id: "",
       editObject: {
         url: "",
@@ -50,7 +55,7 @@ class EditClubInfo extends Component {
         icon_src: "",
         photo_album: "",
         social_urls: [],
-        phone_number:"",
+        phone_number: ""
       }
     };
   }
@@ -78,10 +83,7 @@ class EditClubInfo extends Component {
   componentDidMount() {
     var i = "1";
     for (i = "1"; i < "35"; i++) {
-      fetch(
-        API.ROOT_URL + "organizations?page=" +
-          i
-      )
+      fetch(API.ROOT_URL + "organizations?page=" + i)
         .then(res => res.json())
         .then(res => {
           for (var j = "0"; j < "15"; j++) {
@@ -90,44 +92,57 @@ class EditClubInfo extends Component {
               allEventsName: [...this.state.allEventsName, res[parseInt(j)]]
             });
             this.state.allEventsName.sort(this.dynamicSort("name")); // we need a spinner to give a couple seconds
-            
           }
         });
     }
   }
   handleClubNameChange(club) {
     if (club != null) {
-        console.log(club)
+      console.log(club);
       this.setState({ clubName: club });
-      this.setState({editObject: {...this.state.editObject, url: club._url} })
+      this.setState({
+        editObject: { ...this.state.editObject, url: club._url }
+      });
     }
   }
   updateInput(event) {
-    if(event.target.name == "additional_info"){
-        this.setState({additional_info: event.target.value.split(",")})
-        this.setState({editObject: {...this.state.editObject, [event.target.name]: this.state.additional_info}})
-    }
-    else if(event.target.name == "description"){
-        this.setState({description: event.target.value.split(",")})
-        this.setState({editObject: {...this.state.editObject, [event.target.name]: this.state.description}})
-    }
-    else if(event.target.name == "social_urls"){
-        this.setState({social_urls: event.target.value.split(",")})
-        this.setState({editObject: {...this.state.editObject, [event.target.name]: this.state.social_urls}})
-    }
-    else{
-    this.setState({ [event.target.name]: event.target.value });
-    this.setState({
-      editObject: {
-        ...this.state.editObject,
-        [event.target.name]: event.target.value
-      }
-    });
+    if (event.target.name == "additional_info") {
+      this.setState({ additional_info: event.target.value.split(",") });
+      this.setState({
+        editObject: {
+          ...this.state.editObject,
+          [event.target.name]: this.state.additional_info
+        }
+      });
+    } else if (event.target.name == "description") {
+      this.setState({ description: event.target.value.split(",") });
+      this.setState({
+        editObject: {
+          ...this.state.editObject,
+          [event.target.name]: this.state.description
+        }
+      });
+    } else if (event.target.name == "social_urls") {
+      this.setState({ social_urls: event.target.value.split(",") });
+      this.setState({
+        editObject: {
+          ...this.state.editObject,
+          [event.target.name]: this.state.social_urls
+        }
+      });
+    } else {
+      this.setState({ [event.target.name]: event.target.value });
+      this.setState({
+        editObject: {
+          ...this.state.editObject,
+          [event.target.name]: event.target.value
+        }
+      });
     }
   }
-  editClubInfo(){
+  editClubInfo() {
     this.props.editClubInfo(this.state.editObject);
-}
+  }
   render() {
     return (
       <div className="app flex-row align-items-center">
@@ -145,7 +160,6 @@ class EditClubInfo extends Component {
                       labelKey="name"
                       valueKey="id"
                       options={this.state.allEventsName}
-                     
                     />
 
                     {this.state.clubName != null && (
@@ -195,34 +209,31 @@ class EditClubInfo extends Component {
                                   onChange={this.updateInput.bind(this)}
                                 />
                               </InputGroup>
-                              <InputGroup className="mb-3">
-                                <div className="input-group-prepend">
-                                  <span className="input-group-text">
-                                    <i className="icon-user" />
-                                  </span>
-                                </div>
+
+                              <FormGroup>
+                                <Label for="contact-message">
+                                  Additional Info
+                                </Label>
                                 <Input
-                                  type="text"
-                                  placeholder="additional info"
+                                  type="textarea"
                                   name="additional_info"
+                                  id="contact-message"
                                   value={this.state.additional_info}
                                   onChange={this.updateInput.bind(this)}
                                 />
-                              </InputGroup>
-                              <InputGroup className="mb-3">
-                                <div className="input-group-prepend">
-                                  <span className="input-group-text">
-                                    <i className="icon-user" />
-                                  </span>
-                                </div>
+                              </FormGroup>
+
+                              <FormGroup>
+                                <Label for="contact-message">Description</Label>
                                 <Input
-                                  type="text"
-                                  placeholder="description"
+                                  type="textarea"
                                   name="description"
+                                  id="contact-message"
                                   value={this.state.description}
                                   onChange={this.updateInput.bind(this)}
                                 />
-                              </InputGroup>
+                              </FormGroup>
+
                               <InputGroup className="mb-3">
                                 <div className="input-group-prepend">
                                   <span className="input-group-text">
@@ -265,20 +276,17 @@ class EditClubInfo extends Component {
                                   onChange={this.updateInput.bind(this)}
                                 />
                               </InputGroup>
-                              <InputGroup className="mb-3">
-                                <div className="input-group-prepend">
-                                  <span className="input-group-text">
-                                    <i className="icon-user" />
-                                  </span>
-                                </div>
+
+                              <FormGroup>
+                                <Label for="contact-message">Social urls</Label>
                                 <Input
+                                  type="textarea"
                                   name="social_urls"
+                                  id="contact-message"
                                   value={this.state.social_urls}
                                   onChange={this.updateInput.bind(this)}
-                                  type="text"
-                                  placeholder="social urls"
                                 />
-                              </InputGroup>
+                              </FormGroup>
                             </CardBody>
                           </Card>
                         </CardGroup>
@@ -305,14 +313,13 @@ class EditClubInfo extends Component {
 }
 
 const mapStateToProps = ({ editClub }) => {
-    return {
-        editClubSuccess: editClub.editClubSuccess,
-    };
+  return {
+    editClubSuccess: editClub.editClubSuccess
   };
-  export default withRouter(
-    connect(
-      mapStateToProps,
-      { editClubInfo,editClub }
-    )(EditClubInfo)
-  );
-  
+};
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { editClubInfo, editClub }
+  )(EditClubInfo)
+);
