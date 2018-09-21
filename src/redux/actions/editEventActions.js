@@ -4,7 +4,7 @@ import API from '../../api';
 export const fetchEditAPI = (editObject) => {
     return function(dispatch)
     {
-        return fetch(API.ROOT_URL + "events/"+editObject.id+"/edit_event", {
+        return fetch(API.ROOT_URL + "events/"+editObject.id+"/edit-event", {
             method: "POST",
             credentials: "include",
             headers: {
