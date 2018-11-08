@@ -1,5 +1,4 @@
 const routes = {
-  '/home': 'Home',
   '/dashboard': 'Dashboard',
   '/clubs': 'Clubs',
   '/addclubs': 'AddClubs',
@@ -10,7 +9,6 @@ const routes = {
   '/addofficer' : 'Add an officer',
   '/deleteofficer': 'Delete an officer',
   '/register':'Register',
-  '/login': 'Login',
-  '/': '',
+  '/login': 'Login'
 };
 export default routes;

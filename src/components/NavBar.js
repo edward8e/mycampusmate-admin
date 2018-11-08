@@ -57,11 +57,11 @@ export default class NavBar extends Component {
                   Contact
                 </NavLink>
               </NavItem>
-              {/* <NavItem>
+              <NavItem>
                 <NavLink active tag={Link} to="/login">
                   Login
                 </NavLink>
-              </NavItem> */}
+              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>

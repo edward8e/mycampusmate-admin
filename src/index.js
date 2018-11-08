@@ -24,11 +24,17 @@ import HomePage from "../src/components/HomePage";
 import AboutPage from "../src/components/AboutPage";
 import ContactPage from "../src/components/ContactPage";
 
+ 
+
+
 ReactDOM.render(
   <HashRouter>
     <Switch>
-      <Route path="/about" name="Home" component={AboutPage} />
-      <Route path="/contact" name="Home" component={ContactPage} />
+      <Route path="/about" name="About" component={AboutPage} />
+      <Route path="/contact" name="Contact" component={ContactPage} />
+      <Route path="/login" name="Login" component={Full} />
+      <Route path="/dashboard" name="Dashboard" component={Full} />
+      <Route path="/addclubs" name="AddClubs" component={Full} />
       <Route path="/" name="Home" component={HomePage} />
     </Switch>
   </HashRouter>,
