@@ -21,6 +21,7 @@ import { addedEvents } from "../../../redux/actions/addEventActions";
 import API from '../../../api';
 
 import DatePicker from "react-datepicker";
+import 'react-datepicker/dist/react-datepicker.css';
 import DayPicker from "react-day-picker";
 import DayPickerInput from "react-day-picker/DayPickerInput";
 import "react-day-picker/lib/style.css";
@@ -238,23 +239,13 @@ class AddClubs extends Component {
                       />
                     </InputGroup>
                     <InputGroup className="mb-3">
-                      <div className="input-group-prepend">
-                        <span className="input-group-text">
-                          <i>End time</i>
-                        </span>
-                      </div>
-                      <DayPickerInput
+                      <DatePicker
                         style={styles.time}
                         onDayChange={this.handleEndDayClick}
                       />
-                      <TimePicker
-                        showSecond={false}
-                        defaultValue={now}
-                        className="xxx"
-                        onChange={this.handleEndTimePick}
-                        format={format}
-                        use12Hours
-                        inputReadOnly
+                       <DatePicker
+                        style={styles.time}
+                        onDayChange={this.handleEndDayClick}
                       />
                     </InputGroup>
                     <InputGroup className="mb-3">

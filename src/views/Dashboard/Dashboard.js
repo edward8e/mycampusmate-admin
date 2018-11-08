@@ -85,7 +85,7 @@ class Dashboard extends Component {
     let items = this.state.users;
     return (
       <div className="animated fadeIn">
-        <h1 className="display-1">Welcome -Name-</h1>
+        <h1 className="display-1">All clubs at UCR-</h1>
         <Row >
           <Col >
             <CardGroup>
