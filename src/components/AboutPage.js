@@ -7,6 +7,7 @@ import edward from "../assets/profile/edward.jpg";
 import jorge from "../assets/profile/jorge.jpg";
 import dylan from "../assets/profile/dylan.jpeg";
 import michalis from "../assets/profile/michalis.jpg";
+import christos from "../assets/profile/christos.jpg";
 
 import highlander from "../assets/logo/ucr_highlander.jpg";
 
@@ -42,9 +43,26 @@ class AboutPage extends Component {
 
           <Row className="show-grid text-center">
             <Col xs={12} sm={4} className="team">
+              <img src={christos} className="rounded-circle" />
+              <h3 className="pt-1 mt-1">Christos Kritikos</h3>
+              <p>CEO</p>
+            </Col>
+            <Col xs={12} sm={4} className="team">
+              <img src={michalis} className="rounded-circle" />
+              <h3 className="pt-1 mt-1">Michalis Faloutsos</h3>
+              <p>CTO</p>
+            </Col>
+            <Col xs={12} sm={4} className="team">
               <img src={richard} className="rounded-circle" />
               <h3 className="pt-1 mt-1">Richard Heng</h3>
               <p>Lead Developer</p>
+            </Col>
+          </Row>
+          <Row className="show-grid text-center">
+            <Col xs={12} sm={4} className="team">
+              <img src={dylan} className="rounded-circle" />
+              <h3 className="pt-1 mt-1">Dylan O’Neill</h3>
+              <p>Product Engineer</p>
             </Col>
             <Col xs={12} sm={4} className="team">
               <img src={edward} className="rounded-circle" />
@@ -55,18 +73,6 @@ class AboutPage extends Component {
               <img src={jorge} className="rounded-circle" />
               <h3 className="pt-1 mt-1">Jorge Flores</h3>
               <p>Database Director</p>
-            </Col>
-          </Row>
-          <Row className="show-grid text-center">
-            <Col xs={12} sm={4} className="team">
-              <img src={dylan} className="rounded-circle" />
-              <h3 className="pt-1 mt-1">Dylan O’Neill</h3>
-              <p>Product Engineer</p>
-            </Col>
-            <Col xs={12} sm={4} className="team">
-              <img src={michalis} className="rounded-circle" />
-              <h3 className="pt-1 mt-1">Michalis Faloutsos</h3>
-              <p>Professor at UCR and President of Programize LLC</p>
             </Col>
           </Row>
         </Container>

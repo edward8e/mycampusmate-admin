@@ -29,7 +29,7 @@ ReactDOM.render(
     <Switch>
       <Route path="/about" name="Home" component={AboutPage} />
       <Route path="/contact" name="Home" component={ContactPage} />
-      <Route path="/" name="Home" component={Full} />
+      <Route path="/" name="Home" component={HomePage} />
     </Switch>
   </HashRouter>,
   document.getElementById("root")
