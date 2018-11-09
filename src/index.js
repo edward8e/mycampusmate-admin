@@ -32,9 +32,27 @@ ReactDOM.render(
     <Switch>
       <Route path="/about" name="About" component={AboutPage} />
       <Route path="/contact" name="Contact" component={ContactPage} />
-      <Route path="/login" name="Login" component={Full} />
+
+      {/* <Route path="/login" name="Login" component={Full} />
       <Route path="/dashboard" name="Dashboard" component={Full} />
       <Route path="/addclubs" name="AddClubs" component={Full} />
+      <Route path="/deleteclubs" name="DeleteClubs" component={Full} /> */}
+
+      <Route path="/dashboard" name="Dashboard" component={Full}/>
+      <Route path="/clubs" name="Clubs" component={Full}/>
+      <Route path="/addclubs" name="AddClubs" component={Full}/>
+      <Route path="/deleteclubs" name="DeleteClubs" component={Full}/>
+      <Route path="/editevent" name="EditEvent" component={Full}/>
+      <Route path="/register" name="Register" component={Full}/>
+      <Route path="/editclubinfo" name="EditClubInfo" component={Full}/>
+      <Route path="/login" name="Login" component={Full}/>
+      <Route path="/forgotpassword" name="ForgotPassword" component={Full}/>
+      <Route path="/addofficer" name="AddOfficer" component={Full}/> 
+      <Route path="/deleteofficer" name="DeleteOfficer" component={Full}/>
+      <Route path="/contactus" name="ContactUs" component={Full}/>
+
+
+
       <Route path="/" name="Home" component={HomePage} />
     </Switch>
   </HashRouter>,
