@@ -2,14 +2,15 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Jumbotron, Container, Row, Col, Media, Button } from "reactstrap";
 
-import richard from "../assets/profile/richard.jpg";
-import edward from "../assets/profile/edward.jpg";
-import jorge from "../assets/profile/jorge.jpg";
-import dylan from "../assets/profile/dylan.jpeg";
-import michalis from "../assets/profile/michalis.jpg";
-import christos from "../assets/profile/christos.jpg";
+import richard from "../../assets/profile/richard.jpg";
+import edward from "../../assets/profile/edward.jpg";
+import jorge from "../../assets/profile/jorge.jpg";
+import dylan from "../../assets/profile/dylan.jpeg";
+import michalis from "../../assets/profile/michalis.jpg";
+import christos from "../../assets/profile/christos.jpg";
 
-import highlander from "../assets/logo/ucr_highlander.jpg";
+
+import highlander from "../../assets/logo/ucr_highlander.jpg";
 
 import NavBar from "./NavBar";
 

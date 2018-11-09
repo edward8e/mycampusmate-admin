@@ -15,12 +15,6 @@ import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
 import Carousel from "./Carousel";
 
-import richard from "../assets/profile/richard.jpg";
-import edward from "../assets/profile/edward.jpg";
-import jorge from "../assets/profile/jorge.jpg";
-import dylan from "../assets/profile/dylan.jpeg";
-import michalis from "../assets/profile/michalis.jpg";
-
 import "./HomePage.scss";
 
 class HomePage extends Component {

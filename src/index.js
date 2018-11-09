@@ -3,9 +3,9 @@ import ReactDOM from "react-dom";
 import { HashRouter, Route, Switch, BrowserRouter } from "react-router-dom";
 
 // Styles
-import "../src/components/NavBar.css";
-// import '../src/components/HomePage.scss';
-import "../src/components/AboutPage.scss";
+import "./containers/Product/NavBar.css";
+// import './containers/Product/HomePage.scss';
+import "./containers/Product/AboutPage.scss";
 
 // Import Flag Icons Set
 import "flag-icon-css/css/flag-icon.min.css";
@@ -20,9 +20,9 @@ import "../scss/core/_dropdown-menu-right.scss";
 
 // Containers
 import Full from "./containers/Full/";
-import HomePage from "../src/components/HomePage";
-import AboutPage from "../src/components/AboutPage";
-import ContactPage from "../src/components/ContactPage";
+import HomePage from "./containers/Product/HomePage";
+import AboutPage from "./containers/Product/AboutPage";
+import ContactPage from "./containers/Product/ContactPage";
 
 ReactDOM.render(
   <HashRouter>
