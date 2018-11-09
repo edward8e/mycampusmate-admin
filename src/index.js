@@ -24,9 +24,6 @@ import HomePage from "../src/components/HomePage";
 import AboutPage from "../src/components/AboutPage";
 import ContactPage from "../src/components/ContactPage";
 
- 
-
-
 ReactDOM.render(
   <HashRouter>
     <Switch>
@@ -38,20 +35,18 @@ ReactDOM.render(
       <Route path="/addclubs" name="AddClubs" component={Full} />
       <Route path="/deleteclubs" name="DeleteClubs" component={Full} /> */}
 
-      <Route path="/dashboard" name="Dashboard" component={Full}/>
-      <Route path="/clubs" name="Clubs" component={Full}/>
-      <Route path="/addclubs" name="AddClubs" component={Full}/>
-      <Route path="/deleteclubs" name="DeleteClubs" component={Full}/>
-      <Route path="/editevent" name="EditEvent" component={Full}/>
-      <Route path="/register" name="Register" component={Full}/>
-      <Route path="/editclubinfo" name="EditClubInfo" component={Full}/>
-      <Route path="/login" name="Login" component={Full}/>
-      <Route path="/forgotpassword" name="ForgotPassword" component={Full}/>
-      <Route path="/addofficer" name="AddOfficer" component={Full}/> 
-      <Route path="/deleteofficer" name="DeleteOfficer" component={Full}/>
-      <Route path="/contactus" name="ContactUs" component={Full}/>
-
-
+      <Route path="/dashboard" name="Dashboard" component={Full} />
+      <Route path="/clubs" name="Clubs" component={Full} />
+      <Route path="/addclubs" name="AddClubs" component={Full} />
+      <Route path="/deleteclubs" name="DeleteClubs" component={Full} />
+      <Route path="/editevent" name="EditEvent" component={Full} />
+      <Route path="/register" name="Register" component={Full} />
+      <Route path="/editclubinfo" name="EditClubInfo" component={Full} />
+      <Route path="/login" name="Login" component={Full} />
+      <Route path="/forgotpassword" name="ForgotPassword" component={Full} />
+      <Route path="/addofficer" name="AddOfficer" component={Full} />
+      <Route path="/deleteofficer" name="DeleteOfficer" component={Full} />
+      <Route path="/contactus" name="ContactUs" component={Full} />
 
       <Route path="/" name="Home" component={HomePage} />
     </Switch>
