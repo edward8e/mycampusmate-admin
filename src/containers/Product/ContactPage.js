@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Jumbotron, Container, Row, Col, Media, Button } from "reactstrap";
 
-import CompanyContact from "../views/ContactUs/CompanyContact";
+import CompanyContact from "../../views/ContactUs/CompanyContact";
 import NavBar from "./NavBar";
 import "./ContactPage.scss";
 

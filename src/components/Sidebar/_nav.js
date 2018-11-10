@@ -2,7 +2,7 @@ export default {
   items: [
     {
       name: "Home",
-      url: "/home",
+      url: "/dashboard",
       icon: "fa fa-home",
     },
     {
@@ -11,12 +11,12 @@ export default {
       icon: 'icon-puzzle',
       children: [
         {
-          name: 'Add a club event',
+          name: 'AddClubs',
           url: '/addclubs',
           icon: 'fa fa-plus-circle'
         },
         {
-          name: 'Delete a club event',
+          name: 'DeleteClubs',
           url: '/deleteclubs',
           icon: 'fa fa-minus-circle'
         },

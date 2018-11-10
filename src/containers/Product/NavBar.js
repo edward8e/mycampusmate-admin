@@ -19,6 +19,7 @@ import {
 
 import { Link } from "react-router-dom";
 import "./NavBar.css";
+import logo from '../../assets/logo/mycampusmate_logo_light.png';
 
 export default class NavBar extends Component {
   constructor(props) {
@@ -38,7 +39,9 @@ export default class NavBar extends Component {
     return (
       <div>
         <Navbar color="ucrBlue" dark expand="md">
-          <NavbarBrand href="/">MyCampusMate</NavbarBrand>
+          {/* <NavbarBrand href="/">MyCampusMate</NavbarBrand> */}
+          <NavbarBrand href="/"> <img src={logo} style={{width:100, marginTop: -7}} /></NavbarBrand>
+
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
@@ -57,11 +60,11 @@ export default class NavBar extends Component {
                   Contact
                 </NavLink>
               </NavItem>
-              {/* <NavItem>
+              <NavItem>
                 <NavLink active tag={Link} to="/login">
                   Login
                 </NavLink>
-              </NavItem> */}
+              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>

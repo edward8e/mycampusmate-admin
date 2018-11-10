@@ -28,7 +28,6 @@ import ReduxThunk from 'redux-thunk';
 import authReducer from '../../redux/reducers/authReducer';
 import addEventReducer from '../../redux/reducers/addEventReducer';
 import deleteEventReducer from '../../redux/reducers/deleteEventReducer';
-import AboutPage from '../../components/AboutPage';
 import editEventReducer from '../../redux/reducers/editEventReducer';
 import editClubReducer from '../../redux/reducers/editClubReducer';
 const allReducers = combineReducers({
@@ -44,7 +43,7 @@ class Full extends Component {
   render() {
     return (
       <Provider store = {store}>
-      <div className="app">
+      <div className="app"> 
         <Header />
         <div className="app-body">
           <Sidebar {...this.props}/>
@@ -53,7 +52,6 @@ class Full extends Component {
             <Container fluid>
               <Switch>
                 <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
-                <Route path="/home" name="home" component={Dashboard}/>
                 <Route path="/clubs" name="Clubs" component={Clubs}/>
                 <Route path="/addclubs" name="AddClubs" component={AddClubs}/>
                 <Route path="/deleteclubs" name="DeleteClubs" component={DeleteClubs}/>
