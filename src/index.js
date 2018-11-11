@@ -17,7 +17,7 @@ import "simple-line-icons/css/simple-line-icons.css";
 import "../scss/style.scss";
 // Temp fix for reactstrap
 import "../scss/core/_dropdown-menu-right.scss";
-
+import HttpsRedirect from 'react-https-redirect';
 // Containers
 import Full from "./containers/Full/";
 import HomePage from "./containers/Product/HomePage";
@@ -25,6 +25,7 @@ import AboutPage from "./containers/Product/AboutPage";
 import ContactPage from "./containers/Product/ContactPage";
 
 ReactDOM.render(
+  <HttpsRedirect>
   <HashRouter>
     <Switch>
       <Route path="/about" name="About" component={AboutPage} />
@@ -50,6 +51,6 @@ ReactDOM.render(
 
       <Route path="/" name="Home" component={HomePage} />
     </Switch>
-  </HashRouter>,
+  </HashRouter> </HttpsRedirect>,
   document.getElementById("root")
 );
